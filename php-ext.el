@@ -25,24 +25,6 @@
 ;; Php ext is some skeleton templates for extend php-mode
 
 
-;; Control Structure functions
-
-(define-skeleton php-if
-  "Insert an if statement."
-  ""
-  '(setq condition (skeleton-read "Condition? ")) \n
-   > "if( " condition " ) {" \n
-   > _ \n
-   ( "other condition, %s: "
-   > "}" \n  
-   > "else if( " str " ) {" \n
-   > _ \n)
-   > "}" \n
-   > "else {" \n
-   > _ \n
-   resume:
-   > "}" \n)
-
 ;; Math functions
 
 (define-skeleton php-abs
@@ -406,6 +388,8 @@
   > "for (" condition "; " index "++) {" \n
   > _ \n
   > "}" \n)
+
+;; Include and require
 
 (define-skeleton php-include
   "Insert a include statement."
