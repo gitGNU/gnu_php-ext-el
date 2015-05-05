@@ -678,8 +678,49 @@
   > "}" \n
 )
 
+
+;; DOM 
+;; More see file:///usr/share/doc/php-doc/html/book.dom.html
+
+(define-skeleton php-domdocument
+  "Insert a new domdocument object"
+  ""
+  > "$" (skeleton-read "Var? ") " = DOMDocument('1.0');" \n
+)
+
+(define-skeleton php-dom-appendChild
+  "Insert a new appendChild dom method"
+  ""
+  >  (skeleton-read "Dom variable? ") "->appendChild(" (skeleton-read "Child? ") ");" \n
+)
+
+(define-skeleton php-dom-createElement
+  "Insert a new appendChild dom method"
+  ""
+  >  (skeleton-read "Dom variable? ") "->createElement(" (skeleton-read "Element? ") ");" \n
+)
+
+(define-skeleton php-dom-createTextNode
+  "Insert a new appendChild dom method"
+  ""
+  >  (skeleton-read "Dom variable? ") "->createTextNode(" (skeleton-read "Text Node? ") ");" \n
+)
+
+(define-skeleton php-dom-setAttribute
+  "Insert a new appendChild dom method"
+  ""
+  >  (skeleton-read "Dom variable? ") "->setAttribute(" (skeleton-read "Attribute? ") ", " (skeleton-read "Value? ") ");" \n
+)
+
+(define-skeleton php-dom-saveXML
+  "Insert a new appendChild dom method"
+  ""
+  >  (skeleton-read "Dom variable? ") "->saveXML();" \n
+)
+
 ;; XML
-;; See /usr/share/doc/php-doc/html/function.xml-parse-into-struct.html
+;; More see /usr/share/doc/php-doc/html/function.xml-parse-into-struct.html
+
 
 (define-skeleton php-utf8_decode
   "Insert a utf8_decode statement"
@@ -730,3 +771,8 @@
   > (skeleton-read "Data? ") 
   > ("Is final? " ", " str) _ ");")  
 
+(define-skeleton php-simplexml_load_file
+  "Insert a new simple xml file object"
+  ""
+  > "$" (skeleton-read "Var? ") " = simplexml_load_file('" (skeleton-read "File path? ")  "');" \n
+)
