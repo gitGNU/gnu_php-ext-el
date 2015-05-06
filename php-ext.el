@@ -819,7 +819,7 @@
 ;; Crack Functions
 
 (define-skeleton php-crack-check
-  "Insert a pow statement"
+  "Insert a crack_check statement"
   ""
   '(setq dictionary (skeleton-read "Dictionary? "))
   '(setq pass (skeleton-read "Password? "))
@@ -828,21 +828,48 @@
 
 
 (define-skeleton php-crack-closedict
-  "Insert a pow statement"
+  "Insert a crack_closedict statement"
   ""
   '(setq dictionary (skeleton-read "Dictionary? "))
   > "crack_closedict(" dictionary ");" \n
 )
 
 (define-skeleton php-crack-getlastmessage
-  "Insert a pow statement"
+  "Insert a crack_getlastmessage statement"
   ""
   > "crack_getlastmessage();" \n
 )
 
 (define-skeleton php-crack-opendict
-  "Insert a pow statement"
+  "Insert a crack_opendict statement"
   ""
   '(setq dictionary (skeleton-read "Dictionary? "))
   > "crack_opendict(" dictionary ");" \n
+)
+
+;; Dio Functions
+
+(define-skeleton php-dio-close
+  "Insert a dio_close statement"
+  ""
+  '(setq fd (skeleton-read "File Descriptor? "))
+  > "dio_close(" fd ");" \n
+)
+
+
+(define-skeleton php-dio-open
+  "Insert a dio_open statement"
+  ""
+  '(setq filename (skeleton-read "Filename? "))
+  '(setq flags (skeleton-read "Flags? "))
+  '(setq mode (skeleton-read "Mode? "))
+  > "dio_open(" filename ", " flags ", " mode ");" \n
+)
+
+(define-skeleton php-dio-read
+  "Insert a dio_read statement"
+  ""
+  '(setq fd (skeleton-read "File Descriptor? "))
+  '(setq length (skeleton-read "Length? "))
+  > "dio_read(" fd ", " length ");" \n
 )
