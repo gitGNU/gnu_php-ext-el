@@ -25,7 +25,8 @@
 ;; Php ext is some skeleton templates for extend php-mode
 ;; DOM is to manage dom objects
 ;; http://php.net/manual/en/book.dom.php
-;; 
+;; More see file:///usr/share/doc/php-doc/html/book.dom.html
+
 
 (define-skeleton php-domdocument
   "Insert a new domdocument object"
