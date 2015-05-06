@@ -36,6 +36,10 @@
 
 (load (concat default-directory "php-classobj.el"))
 
+;; Exceptions
+
+(load (concat default-directory "php-exceptions.el"))
+
 ;; Handling strings
 
 (load (concat default-directory "php-strings.el"))
@@ -49,30 +53,6 @@
 ;; file:///usr/share/doc/php-doc/html/ref.var.html
  
 (load (concat default-directory "php-var.el"))
-
-;; Exceptions
-
-(define-skeleton php-try-catch
-  "Insert a try catch statement"
-  ""
-  > "try {" \n
-  _ \n
-  > "} catch (" (skeleton-read "Exception? ") ") {" \n
-  _ \n
-  > "}" \n
-)
-
-(define-skeleton php-try-catch-finally
-  "Insert a try catch statement"
-  ""
-  > "try {" \n
-  _ \n
-  > "} catch (" (skeleton-read "Exception? ") ") {" \n
-  _ \n
-  > "} finally {" \n
-  _ \n
-  > "}" \n
-)
 
 
 ;; DOM 
