@@ -24,7 +24,6 @@
 ;; Description:
 ;; Php ext is some skeleton templates for extend php-mode
 
-
 ;; Math functions
 
 (define-skeleton php-abs
@@ -389,7 +388,18 @@
   > _ \n
   > "}" \n)
 
-;; Include and require
+(define-skeleton php-switch
+  "Insert a switch statement."
+  ""
+  '(setq index (skeleton-read "Index variable? ")) \n
+  "switch (" index ") {" \n
+  ( "Some case? %s: "
+    > "case " str ":" \n
+    > _ \n
+    > "break;" \n
+ )
+  "}")
+
 
 (define-skeleton php-include
   "Insert a include statement."
@@ -403,6 +413,11 @@
   '(setq file (skeleton-read "File? ")) \n
   > "include_once '" file "';")
 
+(define-skeleton php-return
+  "Insert a require statement."
+  ""
+  > "return " _ ";")
+
 (define-skeleton php-require
   "Insert a require statement."
   ""
@@ -414,6 +429,15 @@
   ""
   '(setq file (skeleton-read "File? ")) \n
   > "require_once '" file "';")
+
+(define-skeleton php-goto
+  "Insert a for statement."
+  ""
+  '(setq index (skeleton-read "Index variable? ")) \n
+  > "goto " index ";" \n
+  > _ \n
+  > index ":" \n
+  > _ \n)
 
 ;; Classes and Functions
 
@@ -718,7 +742,7 @@
   >  (skeleton-read "Dom variable? ") "->saveXML();" \n
 )
 
-;; XML
+;; XML Parser
 ;; More see /usr/share/doc/php-doc/html/function.xml-parse-into-struct.html
 
 
@@ -775,4 +799,18 @@
   "Insert a new simple xml file object"
   ""
   > "$" (skeleton-read "Var? ") " = simplexml_load_file('" (skeleton-read "File path? ")  "');" \n
+)
+
+;; XML Reader
+
+(define-skeleton php-xmlreader
+  "Insert a new xmlreader object"
+  ""
+  > "$" (skeleton-read "Var? ") " = new XMLReader();" \n
+)
+
+(define-skeleton php-xmlreader-open
+  "Insert a new xmlreader object"
+  ""
+  > (skeleton-read "Var? ") "->open(" (skeleton-read "File? ") ")" \n
 )
