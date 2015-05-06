@@ -78,115 +78,17 @@
 ;; DOM 
 ;; More see file:///usr/share/doc/php-doc/html/book.dom.html
 
-(define-skeleton php-domdocument
-  "Insert a new domdocument object"
-  ""
-  > "$" (skeleton-read "Var? ") " = DOMDocument('1.0');" \n
-)
-
-(define-skeleton php-dom-appendChild
-  "Insert a new appendChild dom method"
-  ""
-  >  (skeleton-read "Dom variable? ") "->appendChild(" (skeleton-read "Child? ") ");" \n
-)
-
-(define-skeleton php-dom-createElement
-  "Insert a new appendChild dom method"
-  ""
-  >  (skeleton-read "Dom variable? ") "->createElement(" (skeleton-read "Element? ") ");" \n
-)
-
-(define-skeleton php-dom-createTextNode
-  "Insert a new appendChild dom method"
-  ""
-  >  (skeleton-read "Dom variable? ") "->createTextNode(" (skeleton-read "Text Node? ") ");" \n
-)
-
-(define-skeleton php-dom-setAttribute
-  "Insert a new appendChild dom method"
-  ""
-  >  (skeleton-read "Dom variable? ") "->setAttribute(" (skeleton-read "Attribute? ") ", " (skeleton-read "Value? ") ");" \n
-)
-
-(define-skeleton php-dom-saveXML
-  "Insert a new appendChild dom method"
-  ""
-  >  (skeleton-read "Dom variable? ") "->saveXML();" \n
-)
+(load (concat default-directory "php-dom.el"))
 
 ;; XML Parser
-;; More see /usr/share/doc/php-doc/html/function.xml-parse-into-struct.html
+;; More see file:///usr/share/doc/php-doc/html/function.xml-parse-into-struct.html
 
-
-(define-skeleton php-utf8_decode
-  "Insert a utf8_decode statement"
-  ""
-  > "utf8_decode(" (skeleton-read "An utf-8 string ") ");" \n
-)
-
-(define-skeleton php-utf8_encode
-  "Insert a utf8_encode statement"
-  ""
-  > "utf8_encode(" (skeleton-read "An iso-8859-1 string ") ");" \n
-)
-
-(define-skeleton php-xml_error_string
-  "Insert a xml_error_string statement"
-  ""
-  > "xml_error_string(" (skeleton-read "Code? ") ");" \n
-)
-
-(define-skeleton php-xml_get_current_byte_index
-  "Insert a xml_get_current_byte_index"
-  ""
-  > "xml_get_current_byte_index(" (skeleton-read "Parser? ") ");" \n
-)
-
-(define-skeleton php-xml-get_current_column_number
-  "Insert a xml_get_current_column_number"
-  ""
-  > "xml_get_current_column_number(" (skeleton-read "Parser? ") ");" \n
-)
-
-(define-skeleton php-xml-get_current_line_number
-  "Insert a xml_get_current_line_number"
-  ""
-  > "xml_get_current_line_number(" (skeleton-read "Parser? ") ");" \n
-)
-
-(define-skeleton php-xml-get_error_code
-  "Insert a xml_get_error_code"
-  ""
-  > "xml_get_error_code(" (skeleton-read "Parser? ") ");" \n
-)
-
-(define-skeleton php-xml_parse
-  "Insert a xml_parse"
-  ""
-  > "xml_parse(" (skeleton-read "Parser? ") ", " 
-  > (skeleton-read "Data? ") 
-  > ("Is final? " ", " str) _ ");")  
-
-(define-skeleton php-simplexml_load_file
-  "Insert a new simple xml file object"
-  ""
-  > "$" (skeleton-read "Var? ") " = simplexml_load_file('" (skeleton-read "File path? ")  "');" \n
-)
+(load (concat default-directory "php-xmlparser.el"))
 
 ;; XML Reader
+;; More see file:///usr/share/doc/php-doc/html/book.xmlreader.html
 
-(define-skeleton php-xmlreader
-  "Insert a new xmlreader object"
-  ""
-  > "$" (skeleton-read "Var? ") " = new XMLReader();" \n
-)
-
-(define-skeleton php-xmlreader-open
-  "Insert a new xmlreader object"
-  ""
-  > (skeleton-read "Var? ") "->open(" (skeleton-read "File? ") ")" \n
-)
-
+(load (concat default-directory "php-xmlreader.el"))
 
 ;; Crack Functions
 
