@@ -814,3 +814,35 @@
   ""
   > (skeleton-read "Var? ") "->open(" (skeleton-read "File? ") ")" \n
 )
+
+
+;; Crack Functions
+
+(define-skeleton php-crack-check
+  "Insert a pow statement"
+  ""
+  '(setq dictionary (skeleton-read "Dictionary? "))
+  '(setq pass (skeleton-read "Password? "))
+  > "crack_check(" dictionary ", " pass ");" \n
+)
+
+
+(define-skeleton php-crack-closedict
+  "Insert a pow statement"
+  ""
+  '(setq dictionary (skeleton-read "Dictionary? "))
+  > "crack_closedict(" dictionary ");" \n
+)
+
+(define-skeleton php-crack-getlastmessage
+  "Insert a pow statement"
+  ""
+  > "crack_getlastmessage();" \n
+)
+
+(define-skeleton php-crack-opendict
+  "Insert a pow statement"
+  ""
+  '(setq dictionary (skeleton-read "Dictionary? "))
+  > "crack_opendict(" dictionary ");" \n
+)
