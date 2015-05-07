@@ -35,14 +35,14 @@
    > "if( " condition " ) {" \n
    > _ \n
    ( "other condition, %s: "
-   > "}" \n  
+   > -2 "}" \n  
    > "else if( " str " ) {" \n
    > _ \n)
-   > "}" \n
+   > -2 "}" \n
    > "else {" \n
    > _ \n
    resume:
-   > "}" \n)
+   > -2 "}" \n)
 
 (define-skeleton php-foreach
   "Insert a foreach statement."
@@ -51,7 +51,7 @@
   '(setq array (skeleton-read "Array? ")) \n
   > "foreach (" index " as " array ") {" \n
   > _ \n
-  > "}" \n)
+  > -2 "}" \n)
 
 (define-skeleton php-for
   "Insert a for statement."
@@ -60,7 +60,7 @@
   '(setq condition (skeleton-read "Condition? ")) \n
   > "for (" condition "; " index "++) {" \n
   > _ \n
-  > "}" \n)
+  > -2 "}" \n)
 
 (define-skeleton php-switch
   "Insert a switch statement."
