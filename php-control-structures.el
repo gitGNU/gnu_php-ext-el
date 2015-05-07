@@ -70,7 +70,7 @@
   ( "Some case? %s: "
     > "case " str ":" \n
     > _ \n
-    > "break;" \n
+    > -2 "break;" \n
  )
   "}")
 
@@ -88,7 +88,7 @@
   > "include_once '" file "';")
 
 (define-skeleton php-return
-  "Insert a require statement."
+  "Insert a return statement."
   ""
   > "return " _ ";")
 
@@ -99,13 +99,13 @@
   > "require '" file "';")
 
 (define-skeleton php-require_once
-  "Insert a require statement."
+  "Insert a require_once statement."
   ""
   '(setq file (skeleton-read "File? ")) \n
   > "require_once '" file "';")
 
 (define-skeleton php-goto
-  "Insert a for statement."
+  "Insert a goto statement."
   ""
   '(setq index (skeleton-read "Index variable? ")) \n
   > "goto " index ";" \n
