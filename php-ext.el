@@ -19,68 +19,71 @@
 ;; Boston, MA 02110-1301 USA,
 
 ;; To install php-ext.el:
-;; You can add (load "path/php-ext/php-ext.el") to your .emacs
+;; You can adapt the next lines in your .emacs
+;; (setq php-ext-path "~/git/php-ext-el/")
+;; (load (concat php-ext-path "php-ext.el"))
 
 ;; Description:
 ;; Php ext is some skeleton templates for extend php-mode
 
 ;; Math functions
 
-(load (concat default-directory "php-math.el"))
+(load (concat php-ext-path "php-math.el"))
 
 ;; Control Structures
 
-(load (concat default-directory "php-control-structures.el"))
+(load (concat php-ext-path "php-control-structures.el"))
 
 ;; Classes Functions
 
-(load (concat default-directory "php-classobj.el"))
+(load (concat php-ext-path "php-classobj.el"))
 
 ;; Exceptions
 
-(load (concat default-directory "php-exceptions.el"))
+(load (concat php-ext-path "php-exceptions.el"))
 
 ;; Handling strings
 
-(load (concat default-directory "php-strings.el"))
+(load (concat php-ext-path "php-strings.el"))
 
 ;; Regular expression
 
-(load (concat default-directory "php-regex.el"))
+(load (concat php-ext-path "php-regex.el"))
 
 ;; Handling Variables
 ;; http://php.net/manual/en/ref.var.php
 ;; file:///usr/share/doc/php-doc/html/ref.var.html
  
-(load (concat default-directory "php-var.el"))
+(load (concat php-ext-path "php-var.el"))
 
 
 ;; DOM 
 ;; More see file:///usr/share/doc/php-doc/html/book.dom.html
 
-(load (concat default-directory "php-dom.el"))
+(load (concat php-ext-path "php-dom.el"))
 
 ;; XML Parser
 ;; More see file:///usr/share/doc/php-doc/html/function.xml-parse-into-struct.html
 
-(load (concat default-directory "php-xmlparser.el"))
+(load (concat php-ext-path "php-xmlparser.el"))
 
 ;; XML Reader
 ;; More see file:///usr/share/doc/php-doc/html/book.xmlreader.html
 
-(load (concat default-directory "php-xmlreader.el"))
+(load (concat php-ext-path "php-xmlreader.el"))
 
 ;; Crack Functions
 
-(load (concat default-directory "php-crack.el"))
+(load (concat php-ext-path "php-crack.el"))
 
 ;; Dio Functions
 
-(load (concat default-directory "php-dio.el"))
+(load (concat php-ext-path "php-dio.el"))
 
 ;; Filesystems functions
 ;; file:///usr/share/doc/php-doc/html/ref.filesystem.html
 
+(load (concat php-ext-path "php-filesystem.el"))
 
 ;; Another functions
 
