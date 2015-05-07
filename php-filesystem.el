@@ -24,3 +24,25 @@
 ;; Filesystem Functions
 ;; http://php.net/manual/en/ref.filesystem.php
 ;; file:///usr/share/doc/php-doc/html/ref.filesystem.html
+
+(define-skeleton php-basename
+  "Insert an addcslashes statement"
+  ""
+  '(setq path (skeleton-read "Path: "))
+  '(setq suffix (skeleton-read "Suffix? "))
+  > "basename(" path ", " suffix ");" \n)
+
+(define-skeleton php-chgrp
+  "Insert a chgrp statemt"
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  '(setq group (skeleton-read "Group: "))
+  > "chgrp(" filename ", " group ");" \n
+)
+
+(define-skeleton php-chmod
+  "Insert a chmod statement."
+  '(setq filename (skeleton-read "Filename: "))
+  '(setq perm (skeleton-read "Permissions: "))
+  > "chmod(" filename ", " perm ");" \n
+)
