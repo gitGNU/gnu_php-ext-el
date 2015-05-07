@@ -46,3 +46,23 @@
   '(setq perm (skeleton-read "Permissions: "))
   > "chmod(" filename ", " perm ");" \n
 )
+
+(define-skeleton php-clearstatcache
+  "Insert a clearstatcache statement."
+  > "clearstatcache();" \n
+  )
+
+(define-skeleton php-copy
+  "Insert a clearstatcache statement."
+  '(setq file1 (skeleton-read "Filename 1: "))
+  '(setq file2 (skeleton-read "Filename 2: "))
+  > "copy(" file1 ", " file2 ");" \n
+  )
+
+(define-skeleton php-dirname
+  "Insert a dirname statement."
+  '(setq dir (skeleton-read "Dirname: "))
+  > "dirname(" dir ");" \n
+  )
+
+
