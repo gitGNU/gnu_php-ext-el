@@ -65,4 +65,70 @@
   > "dirname(" dir ");" \n
   )
 
+(define-skeleton php-disk_free_space
+  "Insert a disk_free_space statement."
+  '(setq dir (skeleton-read "Directory: "))
+  > "disk_free_space(" dir ");" \n
+  )
+
+(define-skeleton php-disk_total_space
+  "Insert a disk_total_space statement."
+  '(setq dir (skeleton-read "Directory: "))
+  > "disk_total_space(" dir ");" \n
+  )
+
+(define-skeleton php-fclose
+  "Insert a fclose statement. fclose closes an open file pointer"
+  '(setq handle (skeleton-read "handle: "))
+  > "fclose(" handle ");" \n
+  )
+
+(define-skeleton php-feof
+  "Insert a feof statement. feof tests for end-of-file on a file pointer"
+  '(setq file (skeleton-read "file: "))
+  > "feof(" file ");" \n
+  )
+
+(define-skeleton php-fflush
+  "Insert a fflush statement. fflush flushes the output to a file"
+  '(setq file (skeleton-read "file: "))
+  > "fflush(" file ");" \n
+  )
+
+(define-skeleton php-fgetc
+  "Insert a fgetc statement. fgetc gets character from file pointer"
+  '(setq handle (skeleton-read "handle: "))
+  > "fgetc(" handle ");" \n
+  )
+
+(define-skeleton php-fgetcsv
+  "Insert a fgetcsv statement. fgetcsv gets line from file pointer and parse for CSV fields"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq length (skeleton-read "length: "))
+  '(setq delimiter (skeleton-read "delimiter: "))
+  '(setq enclosure (skeleton-read "enclosure: "))
+  '(setq escape (skeleton-read "escape: "))
+  > "fgetc(" handle ", " length ", " delimiter ", " enclosure ", " escape ");" \n
+  )
+
+(define-skeleton php-fgets
+  "Insert a fgets statement. Fgets gets line from file pointer"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq length (skeleton-read "length: "))
+  > "fgets(" handle ", " length ");" \n
+  )
+
+(define-skeleton php-fgetss
+  "Insert a fgetss statement. Fgets gets line from file pointer and strip HTML tags"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq length (skeleton-read "length: "))
+  '(setq allowable_tags (skeleton-read "allowable_tags: "))
+  > "fgets(" handle ", " length ", " allowable_tags ");" \n
+  )
+
+(define-skeleton php-file_exists
+  "Insert a file_exists statement."
+  '(setq file (skeleton-read "file: "))
+  > "file_exists(" file ");" \n
+  )
 
