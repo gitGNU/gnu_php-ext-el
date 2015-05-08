@@ -132,3 +132,41 @@
   > "file_exists(" file ");" \n
   )
 
+(define-skeleton php-file_get_contents
+  "Insert a file_get_contents statement. file_get_contents reads entire file into a string"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq use_include_path (skeleton-read "use_include_path: "))
+  '(setq resource (skeleton-read "resource: "))
+  '(setq offset (skeleton-read "offset: "))
+  '(setq maxlen (skeleton-read "maxlen: "))
+  > "file_get_contents(" filename ", " use_include_path ", " resource ", " offset ", " maxlen ");" \n
+  )
+
+(define-skeleton php-file_put_contents
+  "Insert a file_put_contents statement. file_put_contents writes a string to a file"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq data (skeleton-read "data: "))
+  '(setq flags (skeleton-read "flags: "))
+  '(setq context (skeleton-read "context: "))
+  > "file_put_contents(" filename ", " data ", " flags ", " context ");" \n
+  )
+
+(define-skeleton php-file
+  "Insert a file statement. file reads a string into an array"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq flags (skeleton-read "flags: "))
+  '(setq context (skeleton-read "context: "))
+  > "file(" filename ", " flags ", " context ");" \n
+  )
+
+(define-skeleton php-fileatime
+  "Insert a fileatime statement. fileatime gets last access time of file"
+  '(setq filename (skeleton-read "filename: "))
+  > "fileatime(" filename ");" \n
+  )
+
+(define-skeleton php-filectime
+  "Insert a filectime statement. filectime gets inode change time of file"
+  '(setq filename (skeleton-read "filectime: "))
+  > "filectime(" filename ");" \n
+  )
