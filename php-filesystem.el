@@ -170,3 +170,49 @@
   '(setq filename (skeleton-read "filectime: "))
   > "filectime(" filename ");" \n
   )
+
+(define-skeleton php-fileinode
+  "Insert a fileinode statement. fileinode gets the file inode"
+  '(setq filename (skeleton-read "fileinode: "))
+  > "fileinode(" filename ");" \n
+  )
+
+(define-skeleton php-filemtime
+  "Insert a filemtime statement. filemtime gets the file modification"
+  '(setq filename (skeleton-read "filemtime: "))
+  > "filemtime(" filename ");" \n
+  )
+
+(define-skeleton php-fileowner
+  "Insert a fileowner statement. fileowner gets the file owner"
+  '(setq filename (skeleton-read "fileowner: "))
+  > "fileowner(" filename ");" \n
+  )
+
+(define-skeleton php-fileperms
+  "Insert a fileperms statement. fileperms gets the file permissions"
+  '(setq filename (skeleton-read "fileperms: "))
+  > "fileperms(" filename ");" \n
+  )
+
+(define-skeleton php-filesize
+  "Insert a filesize statement. filesize gets the size for the given file"
+  '(setq filename (skeleton-read "filesize: "))
+  > "filesize(" filename ");" \n
+  )
+
+(define-skeleton php-filetype
+  "Insert a filetype statement. filetype gets the type for the given file"
+  '(setq filename (skeleton-read "filetype: "))
+  > "filetype(" filename ");" \n
+  )
+
+(define-skeleton php-flock
+  "Insert a flock statement. flock is a portable advisory file locking"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq operation (skeleton-read "operation: "))
+  '(setq wouldblock (skeleton-read "wouldblock: "))
+  > "flock(" handle ", " operation ", " wouldblock ");" \n
+  )
+
+
