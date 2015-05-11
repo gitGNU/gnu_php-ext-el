@@ -215,4 +215,34 @@
   > "flock(" handle ", " operation ", " wouldblock ");" \n
   )
 
+(define-skeleton php-fnmatch
+  "Insert a fnmatch statement. fnmatch match filename against a pattern"
+  '(setq pattern (skeleton-read "pattern: "))
+  '(setq string (skeleton-read "string: "))
+  '(setq flags (skeleton-read "flags: "))
+  > "fnmatch(" pattern ", " string ", " flags ");" \n
+)
 
+(define-skeleton php-fopen
+  "Insert a fopen statement. fopen binds a named resource"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq mode (skeleton-read "mode: "))
+  '(setq use_include_path (skeleton-read "use_include_path: "))
+  '(setq context (skeleton-read "context: "))
+  > "fopen(" filename ", " mode ", " use_include_path ", " context ");" \n
+)
+
+(define-skeleton php-fpassthru
+  "Insert a fpassthru statement. fpassthru output all remaining data on a file pointer"
+  '(setq handle (skeleton-read "handle: "))
+  > "fpassthru(" handle ");" \n
+)
+
+(define-skeleton php-fputcsv
+  "Insert a fputcsv statement. fputcsv formats line as csv and write to file pointer"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq fields (skeleton-read "fields: "))
+  '(setq delimiter (skeleton-read "delimiter: "))
+  '(setq enclosure (skeleton-read "enclosure: "))
+  > "fputcsv(" handle ", " fields ", " delimiter ", " enclosure ");" \n
+)
