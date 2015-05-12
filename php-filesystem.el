@@ -378,5 +378,63 @@
   > "lstat(" path ");" \n
 )
 
+(define-skeleton php-mkdir 
+  "Insert a mkdir statement. mkdir makes a directory"
+  '(setq path (skeleton-read "path: "))
+  '(setq mode (skeleton-read "permissions mode (numeric): "))
+  '(setq recursive (skeleton-read "recursive: "))
+  '(setq resource (skeleton-read "context: "))
+  > "mkdir(" path ", " mode ", " recursive ", " resource ");" \n
+)
 
+(define-skeleton php-move_uploaded_file
+  "Insert a move_uploaded_file statement. move an uploaded file to a new location"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq destination (skeleton-read "destination: "))
+  > "move_uploaded_file(" filename ", " destination ");" \n
+)
+
+(define-skeleton php-parse_ini_file
+  "Insert a parse_ini_file statement. parse_ini_file parses a configuration file"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq process_sections (skeleton-read "process sections: "))
+  '(setq scanner_mode (skeleton-read "scanner mode: "))
+  > "parse_ini_file(" filename ", " process_sections ", " scanner_mode ");" \n
+)
+
+(define-skeleton php-parse_ini_string
+  "Insert a parse_ini_string statement. parse_ini_string parses a configuration string"
+  '(setq string (skeleton-read "string: "))
+  '(setq process_sections (skeleton-read "process sections: "))
+  '(setq scanner_mode (skeleton-read "scanner mode: "))
+  > "parse_ini_string(" string ", " process_sections ", " scanner_mode ");" \n
+)
+
+(define-skeleton php-pathinfo
+  "Insert a pathinfo statement. pathinfo returns information about a file path"
+  '(setq path (skeleton-read "path: "))
+  '(setq options (skeleton-read "options: "))
+  > "pathinfo(" path ", " options ");" \n
+)
+
+(define-skeleton php-pclose 
+  "Insert a pclose statement. pclose closes process file pointer"
+  '(setq handle (skeleton-read "handle: "))
+  > "pclose(" handle ");" \n
+)
+
+(define-skeleton php-popen 
+  "Insert a popen statement. popen opens process file pointer"
+  '(setq command (skeleton-read "command: "))
+  '(setq mode (skeleton-read "mode: "))
+  > "popen(" command ", " mode ");" \n
+)
+
+(define-skeleton php-readfile
+  "Insert a readfile statement. readfile outputs a file"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq use_include_path (skeleton-read "use_include_path: "))
+  '(setq context (skeleton-read "context: "))
+  > "readfile(" filename ", " use_include_path ", " context ");" \n
+)
 
