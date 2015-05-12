@@ -305,24 +305,78 @@
 
 (define-skeleton php-is_dir
   "Insert a is_dir statement. is_dir tells whether the filename is a directory"
-  '(setq is_dir (skeleton-read "filename: "))
+  '(setq filename (skeleton-read "filename: "))
   > "is_dir(" filename ");" \n
 )
 
 (define-skeleton php-is_executable
   "Insert a is_executable statement. is_executable tells whether the filename is a executable"
-  '(setq is_executable (skeleton-read "filename: "))
+  '(setq filename (skeleton-read "filename: "))
   > "is_executable(" filename ");" \n
 )
 
 (define-skeleton php-is_file
   "Insert a is_file statement. is_file tells whether the filename is a regular file"
-  '(setq is_file (skeleton-read "filename: "))
+  '(setq filename (skeleton-read "filename: "))
   > "is_file(" filename ");" \n
 )
 
 (define-skeleton php-is_link
   "Insert a is_link statement. is_link tells whether the filename is a symbolic link"
-  '(setq is_link (skeleton-read "filename: "))
+  '(setq filename (skeleton-read "filename: "))
   > "is_link(" filename ");" \n
 )
+
+(define-skeleton php-is_readable
+  "Insert a is_readable statement. is_readable tells whether the filename is a readable"
+  '(setq filename (skeleton-read "filename: "))
+  > "is_readable(" filename ");" \n
+)
+
+(define-skeleton php-is_uploaded_file
+  "Insert a is_uploaded_file statement. is_uploaded_file tells whether the filename is a executable"
+  '(setq filename (skeleton-read "filename: "))
+  > "is_uploaded_file(" filename ");" \n
+)
+
+(define-skeleton php-is_writable
+  "Insert a is_writable statement. is_writable tells whether the filename is a writable"
+  '(setq filename (skeleton-read "filename: "))
+  > "is_writable(" filename ");" \n
+)
+
+(define-skeleton php-lchgrp
+  "Insert a lchgrp statement. lchgrp changes group ownership of symlink"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq group (skeleton-read "group: "))
+  > "lchgrp(" filename ", " group ");" \n
+)
+
+(define-skeleton php-lchown
+  "Insert a lchown statement. lchown changes user ownership of symlink"
+  '(setq filename (skeleton-read "filename: "))
+  '(setq user (skeleton-read "user: "))
+  > "lchown(" filename ", " user ");" \n
+)
+
+(define-skeleton php-link 
+  "Insert a link statement. link creates a hard link"
+  '(setq target (skeleton-read "target of the link: "))
+  '(setq link (skeleton-read "link: "))
+  > "link(" target ", " link ");" \n
+)
+
+(define-skeleton php-linkinfo 
+  "Insert a linkinfo statement. linkinfo gets information about a link"
+  '(setq path (skeleton-read "path of the link: "))
+  > "linkinfo(" path ");" \n
+)
+
+(define-skeleton php-lstat 
+  "Insert a lstat statement. lstat gives information about a symbolic link or file"
+  '(setq path (skeleton-read "path of the link: "))
+  > "lstat(" path ");" \n
+)
+
+
+
