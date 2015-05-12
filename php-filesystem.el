@@ -246,3 +246,83 @@
   '(setq enclosure (skeleton-read "enclosure: "))
   > "fputcsv(" handle ", " fields ", " delimiter ", " enclosure ");" \n
 )
+
+(define-skeleton php-fread
+  "Insert a fread statement. Binary-safe file read"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq length (skeleton-read "length: "))
+  > "fread(" handle ", " length ");" \n
+)
+
+(define-skeleton php-fscanf
+  "Insert a fscanf statement. fscanf parses input from a file according to a format"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq format (skeleton-read "format: "))
+  > "fscanf(" handle ", " format ");" \n
+)
+
+(define-skeleton php-fseek
+  "Insert a fseek statement. fseek seeks on a file pointer."
+  '(setq handle (skeleton-read "handle: "))
+  '(setq offset (skeleton-read "offset: "))
+  '(setq whence (skeleton-read "whence: "))
+  > "fseek(" handle ", " offset ", " whence ");" \n
+)
+
+(define-skeleton php-fstat
+  "Insert a fstat statement. fstat gets information about a file using an open file pointer"
+  '(setq handle (skeleton-read "handle: "))
+  > "fstat(" handle ");" \n
+)
+
+(define-skeleton php-ftell
+  "Insert a ftell statement. ftell returns the current position of the file read/write pointer"
+  '(setq handle (skeleton-read "handle: "))
+  > "ftell(" handle ");" \n
+)
+
+(define-skeleton php-ftruncate
+  "Insert a ftruncate statement. ftruncate truncates a file to a given length"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq size (skeleton-read "size: "))
+  > "ftruncate(" handle ", " size ");" \n
+)
+
+(define-skeleton php-fwrite
+  "Insert a fwrite statement. Binary safe file write"
+  '(setq handle (skeleton-read "handle: "))
+  '(setq string (skeleton-read "string: "))
+  '(setq length (skeleton-read "length: "))
+  > "fwrite(" handle ", " string ", " length ");" \n
+)
+
+(define-skeleton php-glob
+  "Insert a glob statement. Find pathnames matching a pattern"
+  '(setq pattern (skeleton-read "pattern: "))
+  '(setq flags (skeleton-read "flags: "))
+  > "glob(" pattern ", " flags ");" \n
+)
+
+(define-skeleton php-is_dir
+  "Insert a is_dir statement. is_dir tells whether the filename is a directory"
+  '(setq is_dir (skeleton-read "filename: "))
+  > "is_dir(" filename ");" \n
+)
+
+(define-skeleton php-is_executable
+  "Insert a is_executable statement. is_executable tells whether the filename is a executable"
+  '(setq is_executable (skeleton-read "filename: "))
+  > "is_executable(" filename ");" \n
+)
+
+(define-skeleton php-is_file
+  "Insert a is_file statement. is_file tells whether the filename is a regular file"
+  '(setq is_file (skeleton-read "filename: "))
+  > "is_file(" filename ");" \n
+)
+
+(define-skeleton php-is_link
+  "Insert a is_link statement. is_link tells whether the filename is a symbolic link"
+  '(setq is_link (skeleton-read "filename: "))
+  > "is_link(" filename ");" \n
+)
