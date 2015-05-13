@@ -438,3 +438,91 @@
   > "readfile(" filename ", " use_include_path ", " context ");" \n
 )
 
+(define-skeleton php-readlink
+  "Insert a readlink statement. readlink returns the target of the symbolic link."
+  '(setq path (skeleton-read "path: "))
+  > "readlink(" path ");" \n
+)
+
+(define-skeleton php-realpath_cache_get
+  "Insert a realpath_cache_get statement. Returns an array of realpath cache entries."
+  > "realpath_cache_get();" \n
+)
+
+(define-skeleton php-realpath_cache_size
+  "Insert a realpath_cache_size statement. Get the amount of memory used by the realpath cache"
+  > "realpath_cache_size();" \n
+)
+
+
+(define-skeleton php-realpath
+  "Insert a realpath statement. realpath expands all symbolic links and resolves references to '/./', '/../' and extra '/' characters in the input path and returns the canonicalized absolute pathname."
+  '(setq path (skeleton-read "path: "))
+  > "realpath(" path ");" \n
+)
+
+(define-skeleton php-rename
+  "Insert a rename statement. Renames a file or directory"
+  '(setq oldname (skeleton-read "oldname: "))
+  '(setq newname (skeleton-read "newname: "))
+  '(setq context (skeleton-read "context: "))
+  > "rename(" oldname ", " newname ", " context ");" \n
+)
+
+(define-skeleton php-rewind 
+  "Insert a rewind statement. Rewind the position of a file pointer"
+  '(setq handle (skeleton-read "handle: "))
+  > "rewind(" handle ");" \n
+)
+
+(define-skeleton php-rmdir
+  "Insert a rmdir statement. Removes directory."
+  '(setq dirname (skeleton-read "dirname: "))
+  > "rmdir(" dirname ");" \n
+)
+
+(define-skeleton php-stat
+  "Insert a stat statement. Gives information about a file."
+  '(setq filename (skeleton-read "filename: "))
+  > "stat(" filename ");" \n
+)
+
+(define-skeleton php-symlink
+  "Insert a symlink statement. symlink creates a symbolic link."
+  '(setq target (skeleton-read "target: "))
+  '(setq link (skeleton-read "link: "))
+  > "symlink(" target ", " link ");" \n
+)
+
+(define-skeleton php-tempnam
+  "Insert a tempname statement. tempnam creates file with unique file name."
+  '(setq dir (skeleton-read "directory: "))
+  '(setq prefix (skeleton-read "prefix: "))
+  > "tempnam(" dir ", " prefix ");" \n
+)
+
+(define-skeleton php-tmpfile
+  "Insert a tmpfile statement. tmpfile creates a temporary file."
+  > "tmpfile();" \n
+)
+
+(define-skeleton php-touch
+  "Insert a touch statement. touch set access and modification time of file."
+  '(setq filename (skeleton-read "filename: "))
+  '(setq time (skeleton-read "time: "))
+  '(setq atime (skeleton-read "atime: "))
+  > "touch(" filename ", " time ", " atime ");" \n
+)
+
+(define-skeleton php-umask
+  "Insert umask statement. Changes the current umask."
+  '(setq mask (skeleton-read "mask: "))
+  > "umask(" mask ");" \n
+)
+
+(define-skeleton php-unlink
+  "Insert unlink statement. Deletes a file."
+  '(setq filename (skeleton-read "filename: "))
+  '(setq context (skeleton-read "context: "))
+  > "unlink(" filename ", " context ");" \n
+)
