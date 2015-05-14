@@ -23,16 +23,16 @@
 (define-skeleton php-preg_filter
   "Insert a preg_filter statement. preg_filter is identical to preg_replace except it only returns the (possibly transformed) subjects where there was a match."
   ""
-  '(setq pattern (skeleton-read "Pattern? "))
-  '(setq replacement (skeleton-read "Replacement? "))
-  '(setq subject (skeleton-read "Subject? "))
+  '(setq pattern (skeleton-read "Pattern: "))
+  '(setq replacement (skeleton-read "Replacement: "))
+  '(setq subject (skeleton-read "Subject: "))
   > "preg_filter(" pattern ", " replacement ", " subject ");" \n)
 
 (define-skeleton php-preg_grep
   "Insert a preg_grep statement. preg_grep return array entries that match the pattern."
   ""
-  '(setq pattern (skeleton-read "Pattern? "))
-  '(setq input (skeleton-read "Input? "))
+  '(setq pattern (skeleton-read "Pattern: "))
+  '(setq input (skeleton-read "Input: "))
   > "preg_grep(" pattern ", " replacement ");" \n)
 
 (define-skeleton php-preg_last_error
@@ -41,3 +41,29 @@
   > "preg_last_error();" \n)
 
 
+(define-skeleton php-preg_match_all
+  "Insert a preg_match_all statement. Perform a global regular expression match"
+  '(setq pattern (skeleton-read "Pattern: "))
+  '(setq subject (skeleton-read "Input string: "))
+  '(setq matches (skeleton-read "The array of all matches: "))
+  '(setq flags (skeleton-read "Flags (PREG_PATTERN_ORDER | PREG_SET_ORDER | PREG_OFFSET_CAPTURE)"))
+  '(setq offset (skeleton-read "Offset: "))
+  > "preg_match_all(" pattern ", " subject ", " matches ", " flags ", " offset ");" \n
+)
+
+(define-skeleton php-preg_match
+  "Insert a preg_match statement. Perform a regular expression match"
+  '(setq pattern (skeleton-read "Pattern: "))
+  '(setq subject (skeleton-read "Input string: "))
+  '(setq matches (skeleton-read "The array of all matches: "))
+  '(setq flags (skeleton-read "Flags (PREG_PATTERN_ORDER | PREG_SET_ORDER | PREG_OFFSET_CAPTURE)"))
+  '(setq offset (skeleton-read "Offset: "))
+  > "preg_match(" pattern ", " subject ", " matches ", " flags ", " offset ");" \n
+)
+
+(define-skeleton php-preg_quote
+  "Insert a preg_quote statement. Quote regular expression characters"
+  '(setq str (skeleton-read "String: "))
+  '(setq delimiter (skeleton-read "Delimiter: "))
+  > "preg_quote(" str ", " delimiter ");" \n
+)
