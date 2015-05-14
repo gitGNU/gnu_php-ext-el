@@ -20,7 +20,7 @@
 
 ;; To install php-ext.el:
 ;; You can adapt the next lines in your .emacs
-;; (setq php-ext-path "~/git/php-ext-el/")
+;; (setq php-ext-path "~/git/php-ext-el")
 ;; (load (concat php-ext-path "php-ext.el"))
 
 ;; Description:
@@ -49,6 +49,7 @@
 ;; Regular expression
 
 (load (concat php-ext-path "php-regex.el"))
+(load (concat php-ext-path "php-pcre.el"))
 
 ;; Handling Variables
 ;; http://php.net/manual/en/ref.var.php
