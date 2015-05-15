@@ -23,15 +23,25 @@
 ;; file:///usr/share/doc/php-doc/html/ref.dio.html
 
 
-(define-skeleton php-dio-close
+(define-skeleton php-dio_close
   "Insert a dio_close statement"
   ""
   '(setq fd (skeleton-read "File Descriptor? "))
   > "dio_close(" fd ");" \n
 )
 
+(define-skeleton php-dio_fcntl
+  "Insert a dio_fcntl statement"
+  ""
+  '(setq fd (skeleton-read "File Descriptor? "))
+  '(setq cmd (skeleton-read "Command? (F_SETLK | F_SETLKW | F_GETLK | F_DUPFD | F_SETFL ) "))
 
-(define-skeleton php-dio-open
+  '(setq args (skeleton-read "Args? (start | length | whence | type ) "))
+  > "dio_fcntl(" fd ", " cmd ", " args ");" \n
+)
+
+
+(define-skeleton php-dio_open
   "Insert a dio_open statement"
   ""
   '(setq filename (skeleton-read "Filename? "))
@@ -40,7 +50,7 @@
   > "dio_open(" filename ", " flags ", " mode ");" \n
 )
 
-(define-skeleton php-dio-read
+(define-skeleton php-dio_read
   "Insert a dio_read statement"
   ""
   '(setq fd (skeleton-read "File Descriptor? "))
@@ -48,7 +58,7 @@
   > "dio_read(" fd ", " length ");" \n
 )
 
-(define-skeleton php-dio-seek
+(define-skeleton php-dio_seek
   "Insert a dio_seek statement"
   ""
   '(setq fd (skeleton-read "File Descriptor? "))
@@ -57,18 +67,10 @@
   > "dio_seek(" fd ", " pos ", " whence ");" \n
 )
 
-(define-skeleton php-dio-stat
+(define-skeleton php-dio_stat
   "Insert a dio_read statement"
   ""
   '(setq fd (skeleton-read "File Descriptor? "))
   > "dio_stat(" fd ");" \n
 )
 
-(define-skeleton php-dio-fcntl
-  "Insert a dio_fcntl statement"
-  ""
-  '(setq fd (skeleton-read "File Descriptor? "))
-  '(setq cmd (skeleton-read "Command? (F_SETLK | F_SETLKW | F_GETLK | F_DUPFD | F_SETFL ) "))
-  '(setq args (skeleton-read "Args? (start | length | whence | type ) "))
-  > "dio_fcntl(" fd ", " cmd ", " args ");" \n
-)
