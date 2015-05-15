@@ -18,6 +18,9 @@
 ;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
 ;; Boston, MA 02110-1301 USA,
 
+;; Variable handling functions
+;; http://php.net/manual/en/ref.var.php
+;; file:///usr/share/doc/php-doc/html/ref.var.html
 
 (define-skeleton php-boolval
   "Insert a boolval statement"
