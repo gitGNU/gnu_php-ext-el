@@ -67,3 +67,32 @@
   '(setq delimiter (skeleton-read "Delimiter: "))
   > "preg_quote(" str ", " delimiter ");" \n
 )
+
+(define-skeleton php-preg_replace_callback
+  "Insert a preg_replace_callback statement."
+  '(setq pattern (skeleton-read "Pattern: "))
+  '(setq callback (skeleton-read "Callback: "))
+  '(setq subject (skeleton-read "Subject: "))
+  '(setq limit (skeleton-read "Limit: "))
+  '(setq count (skeleton-read "Count: "))
+  > "preg_replace_callback(" pattern ", " callback ", " subject ", " limit ", " count ");" \n
+)
+
+(define-skeleton php-preg_replace
+  "Insert a preg_replace statement. Perform a regular expression search and replace"
+  '(setq pattern (skeleton-read "Pattern: "))
+  '(setq replacement (skeleton-read "Replacement: "))
+  '(setq subject (skeleton-read "Subject: "))
+  '(setq limit (skeleton-read "Limit: "))
+  '(setq count (skeleton-read "Count: "))
+  > "preg_replace_callback(" pattern ", " replacement ", " subject ", " limit ", " count ");" \n
+)
+
+(define-skeleton php-preg_split
+  "Insert a preg_split statement. Split string by a regular expression"
+  '(setq pattern (skeleton-read "Pattern: "))
+  '(setq subject (skeleton-read "Subject: "))
+  '(setq limit (skeleton-read "Limit: "))
+  '(setq flags (skeleton-read "Flags: "))
+  > "preg_split(" pattern ", " subject ", " limit ", " flags ");" \n
+)
