@@ -2,13 +2,14 @@
 #+TODO: TODO(t) INPROGRESS(i) FUTURE(f) | DONE(d!) CANCELED(c!) 
 
 * INPROGRESS php-classobj.el
-
 * DONE php-control-structures.el
 
 * DONE php-crack.el
   CLOSED: [2015-05-15 vie 11:42]
   - State "DONE"       from "TODO"       [2015-05-15 vie 11:42]
-* INPROGRESS php-dio.el 
+* DONE php-dio.el 
+  CLOSED: [2015-05-15 vie 18:04]
+  - State "DONE"       from "INPROGRESS" [2015-05-15 vie 18:04]
 * INPROGRESS php-dom.el
 * DONE php-exceptions.el
   CLOSED: [2015-05-15 vie 11:49]
@@ -22,6 +23,8 @@
 * DONE php-pcre.el
 * INPROGRESS php-regex.el
 * INPROGRESS php-strings.el
-* INPROGRESS php-var.el
+* DONE php-var.el
+  CLOSED: [2015-05-16 sáb 17:10]
+  - State "DONE"       from "INPROGRESS" [2015-05-16 sáb 17:10]
 * INPROGRESS php-xmlparser.el
 * INPROGRESS php-xmlreader.el
