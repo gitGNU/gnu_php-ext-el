@@ -112,6 +112,37 @@
   '(setq var (skeleton-read "Explode variable? "))
   > "explode('" separator "', " var ");" \n)
 
+(define-skeleton php-fprintf 
+  "Insert a fprintf statement"
+  '(setq handle (skeleton-read "Handle: "))
+  '(setq format (skeleton-read "Format: "))
+  '(setq args (skeleton-read "Args: "))
+  > "fprintf(" handle ", " format ", " args ");" \n
+)
+
+(define-skeleton php-get_html_translation_table
+  "Insert a get_html_translation_table statement. Returns the translation table used by htmlspecialchars and htmlentities"
+  '(setq table (skeleton-read "Table: "))
+  '(setq flags (skeleton-read "Flags: "))
+  '(setq encoding (skeleton-read "Encoding: "))
+  > "get_html_translation_table(" table ", " flags ", " encoding ");" \n
+)
+
+
+(define-skeleton php-hebrev
+  "Insert a hebrev statement. Convert logical Hebrew text to visual text with newline conversion"
+  '(setq hebrew_text (skeleton-read "Hebrew text: "))
+  '(setq max_chars_per_line (skeleton-read "Maximum number of characters per line: "))
+  > "hebrev(" hebrew_text ", " max_chars_per_line ");" \n
+)
+
+(define-skeleton php-hebrevc
+  "Insert a hebrevc statement. Convert logical Hebrew text to visual text with newline conversion"
+  '(setq hebrew_text (skeleton-read "Hebrew text: "))
+  '(setq max_chars_per_line (skeleton-read "Maximum number of characters per line: "))
+  > "hebrevc(" hebrew_text ", " max_chars_per_line ");" \n
+)
+
 (define-skeleton php-implode
   "Insert an implode statement"
   ""
