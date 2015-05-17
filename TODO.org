@@ -1,7 +1,9 @@
 #+STARTUP: logdone
 #+TODO: TODO(t) INPROGRESS(i) FUTURE(f) | DONE(d!) CANCELED(c!) 
 
-* INPROGRESS php-classobj.el
+* DONE php-classobj.el
+  CLOSED: [2015-05-17 dom 14:52]
+  - State "DONE"       from "INPROGRESS" [2015-05-17 dom 14:52]
 * DONE php-control-structures.el
 
 * DONE php-crack.el
