@@ -42,11 +42,30 @@
   > "}" \n
 )
 
-(define-skeleton php-get_object_vars
-  "Insert a get_object_var statement."
-  ""
-  '(setq str (skeleton-read "Var? "))
-  > "get_object_vars('" str "');" \n
+(define-skeleton php__autoload 
+  "Insert a __autoload statement. Attempt to load undefined class"
+  '(setq class (skeleton-read "Class: "))
+  > "__autoload(" class ");" \n
+)
+
+(define-skeleton php-class_alias
+  "Insert a class_alias statement. Creates an alias for a class"
+  '(setq original (skeleton-read "Original: "))
+  '(setq alias (skeleton-read "Alias: "))
+  '(setq autoload (skeleton-read "Autoload: "))
+  > "class_alias(" original ", " alias ", " autoload ");" \n
+)
+
+(define-skeleton php-class_exists
+  "Insert a class_exists statement. Checks if the class has been defined"
+  '(setq class_name (skeleton-read "Class name: "))
+  '(setq autoload (skeleton-read "Autoload: "))
+  > "class_exists(" class_name ", " autoload ");" \n
+)
+
+(define-skeleton php-get_called_class
+  "Insert a get_called_class statement. Gets the name of the class the static method is called in."
+  > "get_called_class();" \n
 )
 
 (define-skeleton php-get_class_methods
@@ -56,9 +75,25 @@
   > "get_class_methods('" str "');" \n
 )
 
+(define-skeleton php-get_class_vars
+  "Insert a get_class_vars statement."
+  ""
+  '(setq str (skeleton-read "Class? "))
+  > "get_class_vars('" str "');" \n
+)
+
 (define-skeleton php-get_class
   "Insert a get_class statement."
   ""
   '(setq str (skeleton-read "Class? "))
   > "get_class('" str "');" \n
 )
+
+
+(define-skeleton php-get_object_vars
+  "Insert a get_object_var statement."
+  ""
+  '(setq str (skeleton-read "Var? "))
+  > "get_object_vars('" str "');" \n
+)
+
