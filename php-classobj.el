@@ -89,11 +89,77 @@
   > "get_class('" str "');" \n
 )
 
+(define-skeleton php-get_declared_classes
+  "Insert a get_declared_classes statement."
+  > "get_declared_classes();" \n
+)
+
+(define-skeleton php-get_declared_interfaces
+  "Insert a get_declared_interfaces statement."
+  > "get_declared_interfaces();" \n
+)
+
+(define-skeleton php-get_declared_traits
+  "Insert a get_declared_traits statement."
+  > "get_declared_traits();" \n
+)
 
 (define-skeleton php-get_object_vars
   "Insert a get_object_var statement."
   ""
-  '(setq str (skeleton-read "Var? "))
-  > "get_object_vars('" str "');" \n
+  '(setq var (skeleton-read "Var? "))
+  > "get_object_vars(" var ");" \n
 )
 
+(define-skeleton php-get_parent_class
+  "Insert a get_parent_class statement."
+  ""
+  '(setq obj (skeleton-read "Object? "))
+  > "get_parent_class(" obj ");" \n
+)
+
+(define-skeleton php-interface_exists
+  "Insert a interface_exists statement."
+  ""
+  '(setq interface_name (skeleton-read "Interface Name: "))
+  '(setq autoload (skeleton-read "Autoload: "))
+  > "interface_exists(" interface_name ", " autoload ");" \n
+)
+
+(define-skeleton php-is_a
+  "Insert an is_a statement. Checks if the object is of this class or has this class as one of its parents"
+  '(setq object (skeleton-read "Object: "))
+  '(setq class_name (skeleton-read "Class name: "))
+  '(setq allow_string (skeleton-read "Allow string: "))
+  > "is_a(" object ", " class_name ", " allow_string ");" \n
+)
+
+(define-skeleton php-is_subclass_of
+  "Insert an is_subclass_of statement."
+  ""
+  '(setq obj (skeleton-read "Object: "))
+  '(setq class (skeleton-read "Class Name: "))
+  '(setq allow_string (skeleton-read "Allow string: "))
+  > "is_subclass_of(" obj ", " class ", " allow_string ");" \n
+)
+
+(define-skeleton php-method_exists
+  "Insert a method_exists statement."
+  '(setq obj (skeleton-read "Object: "))
+  '(setq method (skeleton-read "Method: "))
+  > "method_exists(" object ", " method ");" \n
+)
+
+(define-skeleton php-property_exists
+  "Insert a property_exists statement."
+  '(setq class (skeleton-read "Class: "))
+  '(setq property (skeleton-read "Property: "))
+  > "property_exists(" class ", " property ");" \n
+)
+  
+(define-skeleton php-trait_exists
+  "Insert a trait_exists statement."
+  '(setq trait (skeleton-read "Trait: "))
+  '(setq autoload (skeleton-read "Autoload (TRUE | FALSE): "))
+  > "trait_exists(" trait ", " autoload ");" \n
+)
