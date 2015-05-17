@@ -40,6 +40,33 @@
   '(setq str (skeleton-read "String? "))
   > "bin2hex(" str ");" \n)
 
+(define-skeleton php-chop
+  "Insert a chop statement. Alias of rtrim"
+  ""
+  '(setq str (skeleton-read "String: "))
+  > "chop(" str ");" \n)
+
+(define-skeleton php-chr
+  "Insert a chr statement. Returns a specific character from ascii code"
+  '(setq ascii (skeleton-read "String: "))
+  > "chr(" ascii ");" \n)
+
+(define-skeleton php-chunk_split
+  "Insert a chunk_split statement. Split a a string into smaller chunks"
+  '(setq body (skeleton-read "String: "))
+  '(setq chunklen (skeleton-read "Chunk length: "))
+  '(setq end (skeleton-read "End: "))
+  > "chunk_split(" body ", " chunklen ", " end ");" \n
+)
+
+(define-skeleton php-convert_cyr_string
+  "Insert a convert_cyr_string statement"
+  ""
+  '(setq str (skeleton-read "String? "))
+  '(setq from (skeleton-read "From? "))
+  '(setq to (skeleton-read "To? "))
+  > "convert_cyr_string(" str ", " from ", " to ");" \n)
+
 (define-skeleton php-convert_uudecode
   "Insert a bin2hex statement"
   ""
@@ -51,6 +78,32 @@
   ""
   '(setq str (skeleton-read "String? "))
   > "convert_uuencode(" str ");" \n)
+
+(define-skeleton php-count_chars
+  "Insert a count_chars statement. Return information about characters used in a string"
+  '(setq str (skeleton-read "String? "))
+  '(setq mode (skeleton-read "Mode? "))
+  > "count_chars(" str ", " mode ");" \n
+)
+
+(define-skeleton php-crc32
+  "Insert a crc32 statement. Calculates the crc32 polynomial of a string"
+  '(setq str (skeleton-read "String: "))
+  > "crc32(" str ");" \n
+)
+
+(define-skeleton php-crypt
+  "Insert a crypt statement. One-way string hashing"
+  '(setq str (skeleton-read "String: "))
+  '(setq salt (skeleton-read "Salt: "))
+  > "crypt(" str ", " salt ");" \n
+)
+
+(define-skeleton php-echo
+  "Insert an echo statement"
+  ""
+  '(setq str (skeleton-read "String: "))
+  > "echo '" str "';" \n)
 
 (define-skeleton php-explode
   "Insert an explode statement"
