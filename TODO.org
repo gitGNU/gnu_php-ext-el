@@ -23,7 +23,9 @@
   CLOSED: [2015-05-15 vie 12:13]
   - State "DONE"       from "TODO"       [2015-05-15 vie 12:13]
 * DONE php-pcre.el
-* INPROGRESS php-regex.el
+* DONE php-regex.el
+  CLOSED: [2015-05-17 dom 16:47]
+  - State "DONE"       from "INPROGRESS" [2015-05-17 dom 16:47]
 * INPROGRESS php-strings.el
 * DONE php-var.el
   CLOSED: [2015-05-16 sáb 17:10]
