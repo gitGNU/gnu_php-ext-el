@@ -143,6 +143,44 @@
   > "hebrevc(" hebrew_text ", " max_chars_per_line ");" \n
 )
 
+(define-skeleton php-hex2bin
+  "Insert a hex2bin statement. Decodes a hexadecimally encoded binary string."
+  '(setq data (skeleton-read "Data: "))
+  > "hex2bin(" data ");" \n
+)
+
+(define-skeleton php-html_entity_decode
+  "Insert a html_entity_decode statement. Convert special characters to HTML entities"
+  '(setq string (skeleton-read "String: "))
+  '(setq flags (skeleton-read "Flags: "))
+  '(setq encoding (skeleton-read "Encoding: "))
+  > "html_entity_decode(" string ", " flags ", " encoding ");" \n
+)
+
+(define-skeleton php-htmlentities
+  "Insert a htmlentities statement. Convert all applicable characters to HTML entities"
+  '(setq string (skeleton-read "String: "))
+  '(setq flags (skeleton-read "Flags: "))
+  '(setq encoding (skeleton-read "Encoding: "))
+  > "htmlentities(" string ", " flags ", " encoding ");" \n
+)
+
+(define-skeleton php-htmlspecialchars_decode
+  "Insert a htmlspecialchars_decode statement. Convert special HTML entities back to characters"
+  '(setq string (skeleton-read "String: "))
+  '(setq flags (skeleton-read "Flags: "))
+  > "htmlspecialchars_decode(" string ", " flags ");" \n
+)
+
+(define-skeleton php-htmlspecialchars
+  "Insert a htmlspecialchars_decode statement. Convert special HTML entities back to characters"
+  '(setq string (skeleton-read "String: "))
+  '(setq flags (skeleton-read "Flags: "))
+  '(setq encoding (skeleton-read "Encoding: "))
+  '(setq double_encode (skeleton-read "Double encode (true | false): "))
+  > "htmlspecialchars_decode(" string ", " flags ");" \n
+)
+
 (define-skeleton php-implode
   "Insert an implode statement"
   ""
@@ -154,8 +192,37 @@
   > ");"
   )
 
+(define-skeleton php-join
+  "Insert an join statement"
+  ""
+  '(setq separator (skeleton-read "Join separator? "))
+  '(setq var (skeleton-read "Join variable? "))
+  > "join('" separator "', " var 
+  (skeleton-read 
+   > ", " str )
+  > ");"
+  )
+
+(define-skeleton php-lcfirst
+  "Insert a lcfirst statement. Make a string's first character lowercase"
+  '(setq str (skeleton-read "String? "))
+  > "lcfirst(" str ");" \n
+)
+
+(define-skeleton php-levenshtein
+  "Insert a levenshtein statement. Calculate Levenshtein distance between two strings"
+  '(setq str1 (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  > "levenshtein(" str1 ", " str2 ");" \n
+)
+
+(define-skeleton php-localeconv
+  "Insert a localeconv statement."
+  > "localeconv();" \n
+)
+
 (define-skeleton php-rtrim
-  "Insert a bin2hex statement"
+  "Insert a rtrim statement"
   ""
   '(setq str (skeleton-read "String? "))
   > "rtrim(" str ");" \n)
