@@ -221,6 +221,56 @@
   > "localeconv();" \n
 )
 
+(define-skeleton php-ltrim
+  "Insert a ltrim statement"
+  ""
+  '(setq str (skeleton-read "String? "))
+  '(setq charlist (skeleton-read "Char list? "))
+  > "ltrim(" str ", " charlist ");" \n)
+
+(define-skeleton php-md5_file
+  "Insert a md5_file statement"
+  ""
+  '(setq filename (skeleton-read "Filename? "))
+  '(setq rawoutput (skeleton-read "Raw output? "))
+  > "ltrim(" filename ", " rawoutput ");" \n)
+
+(define-skeleton php-md5
+  "Insert a md5 statement"
+  ""
+  '(setq str (skeleton-read "String? "))
+  '(setq rawoutput (skeleton-read "Raw output? "))
+  > "md5(" str ", " rawoutput ");" \n)
+
+(define-skeleton php-metaphone
+  "Insert a metaphone statament"
+  '(setq str (skeleton-read "String? "))
+  '(setq phonemes (skeleton-read "Phonemes? "))
+  > "metaphone(" str ", " phonemes ");" \n)
+
+(define-skeleton php-money_format
+  "Insert a money_format statement"
+  '(setq str (skeleton-read "Format? "))
+  '(setq number (skeleton-read "Number? "))
+  > "money_format(" str ", " number ");" \n)
+
+(define-skeleton php-nl_langinfo
+  "Insert a nl_langinfo statement"
+  '(setq str (skeleton-read "Item? "))
+  > "nl_langinfo(" str ");" \n)
+
+(define-skeleton php-nl2br
+  "Insert a nl2br statement"
+  '(setq str (skeleton-read "String? "))
+  '(setq is_xhtml (skeleton-read "Is xhtml? "))
+  > "nl2br(" str ", " is_xhtml ");" \n)
+
+(define-skeleton php-number_format
+  "Insert a number_format statement"
+  '(setq float (skeleton-read "Float? "))
+  '(setq number (skeleton-read "Number? "))
+  > "number_format(" float ", " number ");" \n)
+
 (define-skeleton php-rtrim
   "Insert a rtrim statement"
   ""
