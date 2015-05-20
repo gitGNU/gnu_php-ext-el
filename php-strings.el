@@ -271,11 +271,60 @@
   '(setq number (skeleton-read "Number? "))
   > "number_format(" float ", " number ");" \n)
 
+(define-skeleton php-ord
+  "Insert an ord statement"
+  '(setq char (skeleton-read "Character? "))
+  > "ord(" str ");" \n)
+
+(define-skeleton php-parse_str
+  "Insert a parse_str statement"
+  '(setq str (skeleton-read "String? "))
+  '(setq arr (skeleton-read "Array? "))
+  > "parse_str(" str ", " arr ");" \n)
+
+(define-skeleton php-print
+  "Insert a print statement"
+  ""
+  '(setq str (skeleton-read "String? "))
+  > "print(" str ");" \n)
+
+(define-skeleton php-printf
+  "Insert a printf statement. Output a formatted string"
+  ""
+  '(setq str (skeleton-read "String? "))
+  > "printf(" str ");" \n)
+
+(define-skeleton php-quoted_printable_decode
+  "Insert a quoted_printable_decode statement. Convert a quoted-printable string to an 8 bit string"
+  ""
+  '(setq str (skeleton-read "String? "))
+  > "quoted_printable_decode(" str ");" \n)
+
+
+(define-skeleton php-quoted_printable_encode
+  "Insert a quoted_printable_encode statement. Convert a 8 bit string to a quoted-printable string"
+  ""
+  '(setq str (skeleton-read "String? "))
+  > "quoted_printable_encode(" str ");" \n)
+
+(define-skeleton php-quotemeta
+  "Insert a quotemeta statement. Quote meta characters"
+  ""
+  '(setq str (skeleton-read "String? "))
+  > "quotemeta(" str ");" \n)
+
 (define-skeleton php-rtrim
   "Insert a rtrim statement"
   ""
   '(setq str (skeleton-read "String? "))
   > "rtrim(" str ");" \n)
+
+(define-skeleton setlocale
+  "Insert a setlocale statement"
+  '(setq category (skeleton-read "Category? "))
+  '(setq locale (skeleton-read "Locale? "))
+  > "setlocale(" category ", " locale ");" \n
+)
 
 (define-skeleton php-strlen
   "Insert a strlen statement"
