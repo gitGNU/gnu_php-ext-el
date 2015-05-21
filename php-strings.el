@@ -319,12 +319,41 @@
   '(setq str (skeleton-read "String? "))
   > "rtrim(" str ");" \n)
 
-(define-skeleton setlocale
+(define-skeleton php-setlocale
   "Insert a setlocale statement"
   '(setq category (skeleton-read "Category? "))
   '(setq locale (skeleton-read "Locale? "))
   > "setlocale(" category ", " locale ");" \n
 )
+
+(define-skeleton php-sha1_file
+  "Insert a sha1_file statement. Calculate the sha1 of a file"
+  '(setq filename (skeleton-read "Filename? "))
+  '(setq rawoutuput (skeleton-read "Rawoutuput? "))
+  > "sha1_file(" filename ", " rawoutuput ");" \n
+)
+
+(define-skeleton php-sha1
+  "Insert a sha1 statement. Calculate the sha1 of a string"
+  '(setq string (skeleton-read "String? "))
+  '(setq rawoutuput (skeleton-read "Rawoutuput? "))
+  > "sha1_file(" string ", " rawoutuput ");" \n
+)
+
+(define-skeleton php-similar_text
+  "Insert a similar_text statement. Calculate the similarity between two words"
+  '(setq first (skeleton-read "First string? "))
+  '(setq second (skeleton-read "Second string? "))
+  '(setq percentage (skeleton-read "Percentage? "))
+  > "similar_text(" first ", " second ", " percentage ");" \n
+)
+
+(define-skeleton php-soundex
+  "Insert a soundex statement. Calculates the soundex key of a string"
+  '(setq str (skeleton-read "String? "))
+  > "soundex(" str ");" \n
+)
+  
 
 (define-skeleton php-strlen
   "Insert a strlen statement"
