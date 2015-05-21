@@ -353,7 +353,37 @@
   '(setq str (skeleton-read "String? "))
   > "soundex(" str ");" \n
 )
+
+(define-skeleton php-sprintf
+  "Insert a sprintf statement. Return a formatted string"
+  '(setq str (skeleton-read "String? "))
+  > "sprintf(" str ");" \n
+)
   
+(define-skeleton php-sscanf
+  "Insert a sscanf statement. Parses input from a string according to a format"
+  '(setq str (skeleton-read "String? "))
+  '(setq format (skeleton-read "Format? "))
+  > "sprintf(" str ", " format ");" \n
+)
+  
+(define-skeleton php-str_getcsv
+  "Insert a str_getcsv statement. Parse a CSV string into an array"
+  '(setq input (skeleton-read "Input? "))
+  '(setq delimiter (skeleton-read "Delimiter? "))
+  '(setq enclosure (skeleton-read "Enclosure? "))
+  '(setq escape (skeleton-read "Escape? "))
+  > "str_getcsv(" input ", " delimiter ", " enclosure ", " escape ");" \n
+)
+
+(define-skeleton php-str_ireplace
+  "Insert a str_ireplace statement. Case-insensitive version of str_replace."
+  '(setq search (skeleton-read "Search? "))
+  '(setq replace (skeleton-read "Replace? "))
+  '(setq subject (skeleton-read "Subject? "))
+  '(setq count (skeleton-read "Count? "))
+  > "str_ireplace(" search ", " replace ", " subject ", " count ");" \n
+)
 
 (define-skeleton php-strlen
   "Insert a strlen statement"
