@@ -424,6 +424,21 @@
   > "str_split(" str ", " split_length ");" \n
 )
 
+(define-skeleton php-str_word_count
+  "Insert a str_word_count statement. Return information about words used in a string."
+  '(setq str (skeleton-read "String? "))
+  '(setq format (skeleton-read "Format? "))
+  '(setq charlist (skeleton-read "Charlist? "))
+  > "str_word_count(" str ", " format ", " charlist ");" \n
+)
+
+(define-skeleton php-strcasecmp
+  "Insert a strcasecmp statement. Binary safe case-insensitive string comparison"
+  '(setq str (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  > "strcasecmp(" str ", " str2 ");" \n
+)
+
 (define-skeleton php-strlen
   "Insert a strlen statement"
   ""
