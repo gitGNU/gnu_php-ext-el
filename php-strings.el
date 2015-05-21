@@ -385,6 +385,45 @@
   > "str_ireplace(" search ", " replace ", " subject ", " count ");" \n
 )
 
+(define-skeleton php-str_pad
+  "Insert a str_pad statement. Pad a string to a certain length with another string"
+  '(setq input (skeleton-read "Input? "))
+  '(setq pad_length (skeleton-read "Pad length? "))
+  '(setq pad_string (skeleton-read "Pad string? "))
+  '(setq pad_type (skeleton-read "Pad type? "))
+  > "str_pad(" input ", " pad_length ", " pad_string ", " pad_type ");" \n
+)
+
+(define-skeleton php-str_repeat
+  "Insert a str_repeat statement. Repeat a string"
+  '(setq input (skeleton-read "Input? "))
+  '(setq multiplier (skeleton-read "Multiplier? "))
+  > "str_repeat(" input ", " multiplier ");" \n
+)
+
+
+(define-skeleton php-str_rot13
+  "Insert a str_rot13 statement"
+  ""
+  '(setq str (skeleton-read "String? "))
+  > "str_rot13(" str ");" \n
+)
+
+(define-skeleton php-str_shuffle
+  "Insert a str_shuffle statement"
+  ""
+  '(setq str (skeleton-read "String? "))
+  > "str_shuffle(" str ");" \n
+)
+
+(define-skeleton php-str_split
+  "Insert a str_shuffle statement"
+  ""
+  '(setq str (skeleton-read "String? "))
+  '(setq split_length (skeleton-read "Split length? "))
+  > "str_split(" str ", " split_length ");" \n
+)
+
 (define-skeleton php-strlen
   "Insert a strlen statement"
   ""
