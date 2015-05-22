@@ -439,6 +439,50 @@
   > "strcasecmp(" str ", " str2 ");" \n
 )
 
+(define-skeleton php-strcmp
+  "Insert a strcmp statement. Binary safe string comparison"
+  '(setq str (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  > "strcmp(" str ", " str2 ");" \n
+)
+
+(define-skeleton php-strcoll
+  "Insert a strcoll statement. Locale based string comparison"
+  '(setq str (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  > "strcoll(" str ", " str2 ");" \n
+)
+
+(define-skeleton php-strcspn
+  "Insert a strcspn statement. Find length of initial segment not matching mask"
+  '(setq str (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  '(setq start (skeleton-read "The start position of the string? "))
+  '(setq length (skeleton-read "The length of the string? "))
+  > "strcspn(" str ", " str2 ");" \n
+)
+
+(define-skeleton php-strip_tags
+  "Insert a strip_tags statement. Strip HTML and PHP tags from a string"
+  '(setq str (skeleton-read "String? "))
+  '(setq allowable_tags (skeleton-read "Allowable tags? "))
+  > "strcoll(" str ", " allowable_tags ");" \n
+)
+
+(define-skeleton php-stripcslashes
+  "Insert a stripcslashes statement."
+  '(setq str (skeleton-read "String? "))
+  > "stripcslashes(" str ");" \n
+)
+
+(define-skeleton php-stripcslashes
+  "Insert a stripcslashes statement. Find the numeric position of the first occurrence of needle in the haystack string. "
+  '(setq haystack (skeleton-read "String haystack? "))
+  '(setq needle (skeleton-read "String needle? "))
+  '(setq offset (skeleton-read "Offset?"))
+  > "stripcslashes(" haystack ", " needle ", " offset ");" \n
+)
+
 (define-skeleton php-strlen
   "Insert a strlen statement"
   ""
