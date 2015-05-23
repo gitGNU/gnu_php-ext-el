@@ -469,7 +469,7 @@
   > "strcoll(" str ", " allowable_tags ");" \n
 )
 
-(define-skeleton php-stripcslashes
+(define-skeleton php-stripslashes
   "Insert a stripcslashes statement."
   '(setq str (skeleton-read "String? "))
   > "stripcslashes(" str ");" \n
@@ -483,11 +483,59 @@
   > "stripcslashes(" haystack ", " needle ", " offset ");" \n
 )
 
+(define-skeleton php-stristr
+  "Insert a stristr statement. Case-insensitive strstr "
+  '(setq haystack (skeleton-read "String haystack? "))
+  '(setq needle (skeleton-read "String needle? "))
+  '(setq before_needle (skeleton-read "Before needle?"))
+  > "stripcslashes(" haystack ", " needle ", " before_needle ");" \n
+)
+
 (define-skeleton php-strlen
   "Insert a strlen statement"
   ""
   '(setq str (skeleton-read "String? "))
   > "strlen(" str ");" \n)
+
+(define-skeleton php-strnatcasecmp
+  "Insert a strnatcasecmp statement"
+  '(setq str (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  > "strnatcasecmp(" str "," str2 ");" \n)
+
+(define-skeleton php-strnatcmp
+  "Insert a strnatcasecmp statement. String comparisons using a natural order algorithm"
+  '(setq str (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  > "strnatcmp(" str "," str2 ");" \n)
+
+(define-skeleton php-strncasecmp
+  "Insert a strncasecmp statement. Binary safe case-insensitive string comparison of the first n characters"
+  '(setq str (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  '(setq len (skeleton-read "Length? "))
+  > "strncasecmp(" str "," str2 ", " len ");" \n)
+
+(define-skeleton php-strncmp
+  "Insert a strncmp statement." 
+  '(setq str (skeleton-read "String? "))
+  '(setq str2 (skeleton-read "String? "))
+  '(setq len (skeleton-read "Length? "))
+  > "strncmp(" str "," str2 ", " len ");" \n)
+
+(define-skeleton php-strpbrk
+  "Insert a strpbrk statement"
+  '(setq haystack (skeleton-read "String? "))
+  '(setq charlist (skeleton-read "Char list? "))
+  > "strlen(" str ", " charlist ");" \n)
+
+(define-skeleton php-strpos
+  "Insert a strpos statement."
+  '(setq haystack (skeleton-read "String haystack? "))
+  '(setq needle (skeleton-read "String needle? "))
+  '(setq offset (skeleton-read "Offset?"))
+  > "strpos(" haystack ", " needle ", " offset ");" \n
+)
 
 (define-skeleton php-strtolower
   "Insert a strlower statement"
