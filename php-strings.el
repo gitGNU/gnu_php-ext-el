@@ -537,6 +537,60 @@
   > "strpos(" haystack ", " needle ", " offset ");" \n
 )
 
+(define-skeleton php-strrchr
+  "Insert a strrchr statement. Find the last occurrence of a character in a string"
+  '(setq haystack (skeleton-read "String haystack? "))
+  '(setq needle (skeleton-read "String needle? "))
+  > "strrchr(" haystack ", " needle ");" \n
+)
+
+(define-skeleton php-strrev
+  "Insert a strrev statement. Reverse a string"
+  '(setq string (skeleton-read "String? "))
+  > "strrev(" string ");" \n
+)
+
+(define-skeleton php-strripos
+  "Insert a strripos statement. Find the position of the last occurrence of a case-insensitive substring in a string"
+  '(setq haystack (skeleton-read "String haystack? "))
+  '(setq needle (skeleton-read "String needle? "))
+  '(setq offset (skeleton-read "Offset?"))
+  > "strripos(" string ", " needle ", " offset ");" \n
+)
+
+(define-skeleton php-strrpos
+  "Insert a strripos statement. Find the position of the last occurrence of a substring in a string"
+  '(setq haystack (skeleton-read "String haystack? "))
+  '(setq needle (skeleton-read "String needle? "))
+  '(setq offset (skeleton-read "Offset?"))
+  > "strrpos(" string ", " needle ", " offset ");" \n
+)
+
+(define-skeleton php-strspn
+  "Insert a strspn statement."
+  '(setq subject (skeleton-read "Subject? "))
+  '(setq mask (skeleton-read "Mask? "))
+  '(setq start (skeleton-read "Start? "))
+  '(setq length (skeleton-read "Length? "))
+  > "strspn(" subject ", " mask ", " start ", " length ");" \n
+)
+
+(define-skeleton php-strstr
+  "Insert a strstr statement. Find the first occurrence of a stringFind the first occurrence of a string"
+  '(setq haystack (skeleton-read "String haystack? "))
+  '(setq needle (skeleton-read "String needle? "))
+  '(setq before_needle (skeleton-read "Before needle?"))
+  > "strstr(" string ", " needle ", " before_needle ");" \n
+)
+
+(define-skeleton php-strtok
+  "Insert a strlower statement"
+  ""
+  '(setq str (skeleton-read "String? "))
+  '(setq token (skeleton-read "Token? "))
+  > "strtolower(" str ");" \n)
+
+
 (define-skeleton php-strtolower
   "Insert a strlower statement"
   ""
