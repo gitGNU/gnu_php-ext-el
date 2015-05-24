@@ -27,3 +27,31 @@
   "Insert an exif_imagetype statement. Determine the type of an image"
   > "exif_imagetype(" (skeleton-read "Filename? ") ");"
 )
+
+(define-skeleton php-exif_read_data
+  "Insert an exif_read_data. Reads the EXIF headers from JPEG or TIFF"
+  ""
+  '(setq filename (skeleton-read "Filename? "))
+  '(setq sections (skeleton-read "Sections? "))
+  '(setq arrays (skeleton-read "Arrays (TRUE | FALSE)? "))
+  '(setq thumbnail (skeleton-read "Thumbnail (TRUE | FALSE)? "))
+  > "exif_read_data(" filename ", " sections ", " arrays ", " thumbnail ");" \n
+)
+
+(define-skeleton php-exif_tagname
+  "Insert an exif_tagname. Get the header name for an index"
+  ""
+  '(setq index (skeleton-read "Index? "))
+  > "exif_tagname(" index ");" \n
+)
+
+(define-skeleton php-exif_thumbnail
+  "Insert an exif_thumbnail. Retrieve the embedded thumbnail of a TIFF or JPEG image"
+  ""
+  '(setq filename (skeleton-read "Filename? "))
+  '(setq width (skeleton-read "Width? "))
+  '(setq height (skeleton-read "Height? "))
+  '(setq imagetype (skeleton-read "Image type? "))
+  > "exif_thumbnail(" filename ", " width ", " height ", " imagetype ");" \n
+)
+
