@@ -609,11 +609,56 @@
   '(setq str (skeleton-read "String? "))
   > "strtoupper(" str ");" \n)
 
-(define-skeleton php-strrev
-  "Insert a strrev statement"
-  ""
+
+(define-skeleton php-strtr 
+  "Insert a strtr statement"
   '(setq str (skeleton-read "String? "))
-  > "strrev('" str "');" \n)
+  '(setq from (skeleton-read "From? "))
+  '(setq to (skeleton-read "To? "))
+  > "strtr(" str ", " from ", " to ");" \n
+)
+
+(define-skeleton php-substr_compare
+  "Insert a substr_compare"
+  '(setq main_str (skeleton-read "The main string being compared? "))
+  '(setq str (skeleton-read "The secondary string being compared? "))
+  '(setq offset (skeleton-read "The start position for the comparison? "))
+  '(setq length (skeleton-read "The length of the comparison? "))
+  > "substr_compare(" main_str ", " str ", " offset ", " length ");" \n
+)
+
+(define-skeleton php-substr_count
+  "Insert a substr_count"
+  '(setq haystack (skeleton-read "String haystack? "))
+  '(setq needle (skeleton-read "String needle? "))
+  '(setq offset (skeleton-read "Offset?"))
+  '(setq length (skeleton-read "Length? "))
+  > "substr_count(" haystack ", " needle ", " offset ", " length ");" \n
+)
+
+(define-skeleton php-substr_replace
+  "Insert a substr_replace"
+  '(setq str (skeleton-read "String? "))
+  '(setq replacement (skeleton-read "Replacement? "))
+  '(setq start (skeleton-read "Start? "))
+  '(setq length (skeleton-read "Length? "))
+  > "substr_replace(" str ", " replacement ", " start ", " length ");" \n
+)
+
+(define-skeleton php-substr
+  "Insert a substr_replace statement"
+  '(setq str (skeleton-read "String? "))
+  '(setq start (skeleton-read "Start? "))
+  '(setq length (skeleton-read "Length? "))
+  > "substr(" str ", " start ", " length ");" \n
+)
+
+(define-skeleton php-trim
+  "Insert a trim statement"
+  '(setq str (skeleton-read "String? "))
+  '(setq charlist (skeleton-read "Charlist? "))
+  > "trim(" str ", " charlist ");" \n
+)
 
 (define-skeleton php-ucfirst
   "Insert a ucfirst statement"
@@ -626,3 +671,11 @@
   ""
   '(setq str (skeleton-read "String? "))
   > "ucwords('" str "');" \n)
+
+(define-skeleton php-vfprintf 
+  "Insert a vfprintf statement"
+  '(setq handle (skeleton-read "Handle? "))
+  '(setq format (skeleton-read "Format? "))
+  '(setq args (skeleton-read "Args? "))
+  > "vfprintf(" handle ", " format ", " args ");" \n
+)
