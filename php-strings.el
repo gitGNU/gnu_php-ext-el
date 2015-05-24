@@ -741,5 +741,28 @@
   > "vfprintf(" handle ", " format ", " args ");" \n
 )
 
+(define-skeleton php-vprintf 
+  "Insert a vprintf statement"
+  ""
+  '(setq format (skeleton-read "Format? "))
+  '(setq args (skeleton-read "Args? "))
+  > "vprintf(" format ", " args ");" \n
+)
 
+(define-skeleton php-vsprintf 
+  "Insert a vsprintf statement"
+  ""
+  '(setq format (skeleton-read "Format? "))
+  '(setq args (skeleton-read "Args? "))
+  > "vsprintf(" format ", " args ");" \n
+)
 
+(define-skeleton php-wordwrap
+  "Insert a wordwrap statement. Wraps a string to a given number of characters" 
+  ""
+  '(setq str (skeleton-read "String? "))
+  '(setq width (skeleton-read "Width? "))
+  '(setq break (skeleton-read "Break? "))
+  '(setq cut (skeleton-read "Cut? (TRUE | FALSE) "))
+  > "wordwrap(" str ", " width ", " break ", " cut ");" \n
+)
