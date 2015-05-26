@@ -97,3 +97,111 @@
   '(setq blendmode (skeleton-read "Blendmode? (TRUE | FALSE)"))
   > "imagealphablending(" image ", " blendmode ");" \n
 )
+
+(define-skeleton php-imageantialias
+  "Insert an imageantialias statement. Should antialias functions be used or not"
+  ""
+  '(setq image (skeleton-read "Image? "))
+  '(setq enabled (skeleton-read "Enabled? (true | false) "))
+  > "imageantialias(" image ", " enabled ");" \n
+)
+
+(define-skeleton php-imagearc
+  "Insert an imagearc statement"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq cx (skeleton-read "x-coordinate of the center: "))
+  '(setq cy (skeleton-read "y-coordinate of the center: "))
+  '(setq width (skeleton-read "width: "))
+  '(setq height (skeleton-read "height: "))
+  '(setq start (skeleton-read "start: "))
+  '(setq end (skeleton-read "end: "))
+  '(setq color (skeleton-read "color: "))
+  > "imagearc(" image ", " cx ", " cy ", " width ", " height ", " start ", " end ", " color ");" \n
+)
+
+(define-skeleton php-imagechar
+  "Insert an imagechar statement"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq font (skeleton-read "Font: ")) 
+  '(setq x (skeleton-read "x: "))
+  '(setq y (skeleton-read "y: "))
+  '(setq c (skeleton-read "c: "))
+  '(setq color (skeleton-read "color: "))
+  > "imagechar(" image ", " font ", " x ", " y ", " c ", " color ");" \n
+)
+
+(define-skeleton php-imagecharup
+  "Insert an imagecharup statement"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq font (skeleton-read "Font: ")) 
+  '(setq x (skeleton-read "x: "))
+  '(setq y (skeleton-read "y: "))
+  '(setq c (skeleton-read "c: "))
+  '(setq color (skeleton-read "color: "))
+  > "imagecharup(" image ", " font ", " x ", " y ", " c ", " color ");" \n
+)
+
+(define-skeleton php-imagecolorallocate
+  "Insert an imagecolorallocate statement"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  > "imagecolorallocate(" image ", " red ", " green ", " blue ");" \n
+)
+
+(define-skeleton php-imagecolorallocatealpha
+  "Insert an imagecolorallocatealpha statement"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  '(setq alpha (skeleton-read "Alpha: "))
+  > "imagecolorallocatealpha(" image ", " red ", " green ", " blue ", " alpha ");" \n
+)
+
+(define-skeleton php-imagecolorat
+  "Insert an imagecolorat statement"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq x (skeleton-read "x: "))
+  '(setq y (skeleton-read "y: "))
+  > "imagecolorat(" image ", " x ", " y ");" \n
+)
+
+(define-skeleton php-imagecolorclosest 
+  "Insert an imagecolorclosest statement. Get the index of the closest color to the specified color"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  > "imagecolorclosest(" image ", " red ", " green ", " blue ");" \n
+)
+
+(define-skeleton php-imagecolorclosestalpha 
+  "Insert an imagecolorclosest statement. Get the index of the closest color to the specified color"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  '(setq alpha (skeleton-read "Alpha: "))
+  > "imagecolorclosestalpha(" image ", " red ", " green ", " blue ", " alpha ");" \n
+)
+
+(define-skeleton php-imagecolorclosesthwb
+  "Insert an imagecolorclosesthwb statement. Get the index of the closest color to the specified color"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  > "imagecolorclosestalpha(" image ", " red ", " green ", " blue ");" \n
+)
+
