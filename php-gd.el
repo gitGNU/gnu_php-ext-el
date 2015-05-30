@@ -20,6 +20,7 @@
 
 ;; GD functions
 ;; file:///usr/share/doc/php-doc/html/ref.image.html
+;; http://php.net/manual/en/ref.image.php
 
 (define-skeleton php-gd_info
   "Insert a gd_info statement. Retrieve information about the currently installed GD library"
@@ -203,5 +204,89 @@
   '(setq green (skeleton-read "Green: "))
   '(setq blue (skeleton-read "Blue: "))
   > "imagecolorclosestalpha(" image ", " red ", " green ", " blue ");" \n
+)
+
+(define-skeleton php-imagecolordeallocate
+  "Insert an imagecolordeallocate statement. De-allocate a color for an image"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq color (skeleton-read "color: "))
+  > "imagecolordeallocate(" image ", " color ");" \n
+)
+
+(define-skeleton php-imagecolorexact
+  "Insert an imagecolorexact statement. Get the index of the specified color"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  > "imagecolorexact(" image ", " red ", " green ", " blue ");" \n
+)
+
+(define-skeleton php-imagecolorexactalpha
+  "Insert an imagecolorexact statement. Get the index of the specified color"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  '(setq alpha (skeleton-read "Alpha: "))
+  > "imagecolorexact(" image ", " red ", " green ", " blue ", " alpha ");" \n
+)
+
+(define-skeleton php-imagecolormatch
+  "Insert an imagecolormatch. Makes the colors of the palette version of an image more closely match the true color version"
+  '(setq image1 (skeleton-read "Image 1: "))
+  '(setq image2 (skeleton-read "Image 2: "))
+  > "imagecolormatch(" image1 ", " image2 ");" \n
+)
+
+(define-skeleton php-imagecolorresolve
+  "Insert an imagecolorresolve statement. Get the index of the specified color"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  > "imagecolorresolve(" image ", " red ", " green ", " blue ");" \n
+)
+
+(define-skeleton php-imagecolorresolvealpha
+  "Insert an imagecolorresolvealpha statement. Get the index of the specified color + alpha or it closest alternative"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  '(setq alpha (skeleton-read "Alpha: "))
+  > "imagecolorresolvealpha(" image ", " red ", " green ", " blue ", " alpha ");" \n
+)
+
+(define-skeleton php-imagecolorset
+  "Insert an imagecolorset statement. Set the color for the specified palette index"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq index (skeleton-read "Index: "))
+  '(setq red (skeleton-read "Red: "))
+  '(setq green (skeleton-read "Green: "))
+  '(setq blue (skeleton-read "Blue: "))
+  '(setq alpha (skeleton-read "Alpha: "))
+  > "imagecolorset(" image ", " index ", " red ", " green ", " blue ", " alpha ");" \n
+)
+
+(define-skeleton php-imagecolorsforindex
+  "Insert an imagecolorsforindex statement. Get the colors for an index"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq index (skeleton-read "Index: "))
+  > "imagecolorsforindex(" image ", " index ");" \n
+)
+
+(define-skeleton php-imagecolorstotal
+  "Insert an imagecolorstotal statement. Get the colors for an index"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  > "imagecolorstotal(" image ");" \n
 )
 
