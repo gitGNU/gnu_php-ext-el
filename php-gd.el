@@ -290,3 +290,62 @@
   > "imagecolorstotal(" image ");" \n
 )
 
+(define-skeleton php-imagecolortransparent
+  "Insert an imagecolortransparent statement. Sets the transparent color in the given image."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imagecolortransparent(" image ", " color ");" \n
+)
+
+(define-skeleton php-imageconvolution
+  "Insert an imageconvolution statement."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq matrix (skeleton-read "Matrix: "))
+  '(setq div (skeleton-read "Divisor result of the convolution: "))
+  '(setq offset (skeleton-read "Offset: "))
+  > "imageconvolution(" image ", " matrix ", " div ", " offset ");" \n
+)
+
+(define-skeleton php-imagecopy
+  "Insert an imagecopy statement."
+  ""
+  '(setq dst_im (skeleton-read "Destination image: "))
+  '(setq src_im (skeleton-read "Source image: "))
+  '(setq dst_x (skeleton-read "X coordinate of destination point: "))
+  '(setq dst_y (skeleton-read "Y coordinate of destination point: "))
+  '(setq src_x (skeleton-read "X coordinate of source point: "))
+  '(setq src_y (skeleton-read "Y coordinate of source point: "))
+  > "imagecopy(" dst_im ", " src_im ", " dst_x ", " dst_y ", " src_x ", " src_y ");" \n
+)
+
+(define-skeleton php-imagecopymerge
+  "Insert an imagecopymerge statement."
+  ""
+  '(setq dst_im (skeleton-read "Destination image: "))
+  '(setq src_im (skeleton-read "Source image: "))
+  '(setq dst_x (skeleton-read "X coordinate of destination point: "))
+  '(setq dst_y (skeleton-read "Y coordinate of destination point: "))
+  '(setq src_x (skeleton-read "X coordinate of source point: "))
+  '(setq src_y (skeleton-read "Y coordinate of source point: "))
+  '(setq src_w (skeleton-read "Source width: "))
+  '(setq src_h (skeleton-read "Source height: "))
+  '(setq pct (skeleton-read "Pct: "))
+  > "imagecopymerge(" dst_im ", " src_im ", " dst_x ", " dst_y ", " src_x ", " src_y ", " src_w ", " src_h ", " pct ");" \n
+)
+
+(define-skeleton php-imagecopymergegray
+  "Insert an imagecopymergegray statement."
+  ""
+  '(setq dst_im (skeleton-read "Destination image: "))
+  '(setq src_im (skeleton-read "Source image: "))
+  '(setq dst_x (skeleton-read "X coordinate of destination point: "))
+  '(setq dst_y (skeleton-read "Y coordinate of destination point: "))
+  '(setq src_x (skeleton-read "X coordinate of source point: "))
+  '(setq src_y (skeleton-read "Y coordinate of source point: "))
+  '(setq src_w (skeleton-read "Source width: "))
+  '(setq src_h (skeleton-read "Source height: "))
+  '(setq pct (skeleton-read "Pct: "))
+  > "imagecopymergegray(" dst_im ", " src_im ", " dst_x ", " dst_y ", " src_x ", " src_y ", " src_w ", " src_h ", " pct ");" \n
+)
