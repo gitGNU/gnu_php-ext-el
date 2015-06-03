@@ -349,3 +349,99 @@
   '(setq pct (skeleton-read "Pct: "))
   > "imagecopymergegray(" dst_im ", " src_im ", " dst_x ", " dst_y ", " src_x ", " src_y ", " src_w ", " src_h ", " pct ");" \n
 )
+
+
+(define-skeleton php-imagecopyresampled
+  "Insert an imagecopyresampled statement."
+  ""
+  '(setq dst_im (skeleton-read "Destination image: "))
+  '(setq src_im (skeleton-read "Source image: "))
+  '(setq dst_x (skeleton-read "X coordinate of destination point: "))
+  '(setq dst_y (skeleton-read "Y coordinate of destination point: "))
+  '(setq src_x (skeleton-read "X coordinate of source point: "))
+  '(setq src_y (skeleton-read "Y coordinate of source point: "))
+  '(setq dst_w (skeleton-read "Destination width: "))
+  '(setq dst_h (skeleton-read "Destination height: "))
+  '(setq src_w (skeleton-read "Source width: "))
+  '(setq src_h (skeleton-read "Source height: "))
+  '(setq pct (skeleton-read "Pct: "))
+  > "imagecopyresampled(" dst_im ", " src_im ", " dst_x ", " dst_y ", " src_x ", " src_y ", " dst_w ", " dst_h ", " src_w ", " src_h ", " pct ");" \n
+)
+
+(define-skeleton php-imagecopyresized
+  "Insert an imagecopyresized statement."
+  ""
+  '(setq dst_im (skeleton-read "Destination image: "))
+  '(setq src_im (skeleton-read "Source image: "))
+  '(setq dst_x (skeleton-read "X coordinate of destination point: "))
+  '(setq dst_y (skeleton-read "Y coordinate of destination point: "))
+  '(setq src_x (skeleton-read "X coordinate of source point: "))
+  '(setq src_y (skeleton-read "Y coordinate of source point: "))
+  '(setq dst_w (skeleton-read "Destination width: "))
+  '(setq dst_h (skeleton-read "Destination height: "))
+  '(setq src_w (skeleton-read "Source width: "))
+  '(setq src_h (skeleton-read "Source height: "))
+  '(setq pct (skeleton-read "Pct: "))
+  > "imagecopyresized(" dst_im ", " src_im ", " dst_x ", " dst_y ", " src_x ", " src_y ", " dst_w ", " dst_h ", " src_w ", " src_h ", " pct ");" \n
+)
+
+(define-skeleton php-imagecreate
+  "Insert an imagecreate statement."
+  ""
+  '(setq width (skeleton-read "Width: "))
+  '(setq height (skeleton-read "Height: "))
+  > "imagecreate(" width ", " height ");" \n
+)
+
+(define-skeleton php-imagecreatefromgd2
+  "Insert an imagecreatefromgd2."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromgd2(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatefromgd2part
+  "Insert an imagecreatefromgd2part"
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  '(setq src_x (skeleton-read "X coordinate: "))
+  '(setq src_y (skeleton-read "Y coordinate: "))
+  '(setq width (skeleton-read "Width: "))
+  '(setq height (skeleton-read "Height: "))
+  > "imagecreatefromgd2part(" filename ", " src_x ", " src_y ", " width ", " height ");" \n
+)
+
+(define-skeleton php-imagecreatefromgd
+  "Insert an imagecreatefromgd."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromgd(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatefromgif
+  "Insert an imagecreatefromgif."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromgif(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatefromjpeg
+  "Insert an imagecreatefromjpeg."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromjpeg(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatefrompng
+  "Insert an imagecreatefromjpeg."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromjpeg(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatefromstring
+  "Insert an imagecreatefromstring."
+  ""
+  '(setq string (skeleton-read "String: "))
+  > "imagecreatefromstring(" string ");" \n
+) 
