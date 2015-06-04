@@ -444,4 +444,88 @@
   ""
   '(setq string (skeleton-read "String: "))
   > "imagecreatefromstring(" string ");" \n
+)
+
+(define-skeleton php-imagecreatefromwbmp
+  "Insert an imagecreatefromwbmp."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromwbmp(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatefromwebp
+  "Insert an imagecreatefromwebp."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromwebp(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatefromxbm
+  "Insert an imagecreatefromxbm."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromxbm(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatefromxpm
+  "Insert an imagecreatefromxpm."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagecreatefromxpm(" filename ");" \n
+)
+
+(define-skeleton php-imagecreatetruecolor
+  "Insert an imagecreatetruecolor."
+  ""
+  '(setq width (skeleton-read "Width: "))
+  '(setq heigth (skeleton-read "Heigth: "))
+  > "imagecreatetruecolor(" width ", " heigth ");" \n
 ) 
+
+(define-skeleton php-imagecrop
+  "Insert an imagecrop."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq rect (skeleton-read "Array Rect: "))
+  > "imagecrop(" image ", " rect " );" \n
+)
+
+(define-skeleton php-imagecropauto
+  "Insert an imagecropauto statement."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq mode (skeleton-read "Mode: "))
+  '(setq treshold (skeleton-read "Treshold: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imagecropauto(" image ", " mode ", " treshold ", " color " );" \n
+)
+
+(define-skeleton php-imagedashedline
+  "Insert a statement to draw a dahsed line"
+  '(setq image (skeleton-read "Image: "))
+  '(setq x1 (skeleton-read "Upper left X coordinate: "))
+  '(setq y1 (skeleton-read "Upper left Y coordinate: "))
+  '(setq x2 (skeleton-read "Bottom right X coordinate: "))
+  '(setq y2 (skeleton-read "Bottom right Y coordinate: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imagedashedline(" image ", " x1 ", " y1 ", " x2 ", " y2 ", " color ");" \n
+)
+
+(define-skeleton php-imagedestroy
+  "Insert an imagedestroy statement."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  > "imagedestroy(" image " );" \n
+)
+
+(define-skeleton php-imageellipse
+  "Insert an imageellipse statement."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq cx (skeleton-read "x-coordinate of the center: "))
+  '(setq cy (skeleton-read "y-coordinate of the center: "))
+  '(setq width (skeleton-read "the ellipse width: "))
+  '(setq heigth (skeleton-read "the ellipse heigth: "))
+  '(setq color (skeleton-read "the ellipse color: "))
+  > "imageellipse(" image ", " cx ", " cy ", " width ", " heigth ", " color ");" \n
+)
