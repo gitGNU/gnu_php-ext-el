@@ -79,6 +79,7 @@
 
 (define-skeleton php-imageaffinematrixconcat
   "Insert an imageaffinematrixconcat statement"
+  ""
   '(setq m1 (skeleton-read "Matrix 1? "))
   '(setq m2 (skeleton-read "Matrix 2? "))
   > "imageaffinematrixconcat(" m1 ", " m2 ");" \n
@@ -86,6 +87,7 @@
 
 (define-skeleton php-imageaffinematrixget
   "Insert an imageaffinematrixget statement"
+  ""
   '(setq type (skeleton-read "Type? "))
   '(setq options (skeleton-read "Options? "))
   > "imageaffinematrixget(" m1 ", " m2 ");" \n
@@ -502,6 +504,7 @@
 
 (define-skeleton php-imagedashedline
   "Insert a statement to draw a dahsed line"
+  ""
   '(setq image (skeleton-read "Image: "))
   '(setq x1 (skeleton-read "Upper left X coordinate: "))
   '(setq y1 (skeleton-read "Upper left Y coordinate: "))
@@ -528,4 +531,108 @@
   '(setq heigth (skeleton-read "the ellipse heigth: "))
   '(setq color (skeleton-read "the ellipse color: "))
   > "imageellipse(" image ", " cx ", " cy ", " width ", " heigth ", " color ");" \n
+)
+
+(define-skeleton php-imagefill
+  "Insert an imagefill statement."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq x (skeleton-read "x-coordinate of start point: "))
+  '(setq y (skeleton-read "y-coordinate of start point: "))
+  '(setq color (skeleton-read "the fill color: "))
+  > "imagefill(" image ", " x ", " y ", " color ");" \n
+)
+
+(define-skeleton php-imagefilledarc
+  "Insert an imagefilledarc statement. Draw a partial arc and fill it"
+  ""
+  '(setq image (skeleton-read "image: "))
+  '(setq cx (skeleton-read "x-coordinate of the center: "))
+  '(setq cy (skeleton-read "y-coordinate of the center: "))
+  '(setq width (skeleton-read "the arc width: "))
+  '(setq heigth (skeleton-read "the arc heigth: "))
+  '(setq start (skeleton-read "the arc start angle in degrees: "))
+  '(setq end (skeleton-read "the arc end angle in degrees: "))
+  '(setq color (skeleton-read "the ellipse color: "))
+  '(setq style (skeleton-read "style: "))
+  > "imagefilledarc(" image ", " cx ", " cy ", " width ", " heigth ", " start ", " end ", " color ", " style ");" \n
+)
+
+(define-skeleton php-imagefilledellipse
+  "Insert an imagefilledarc statement. Draw a partial arc and fill it"
+  ""
+  '(setq image (skeleton-read "image: "))
+  '(setq cx (skeleton-read "x-coordinate of the center: "))
+  '(setq cy (skeleton-read "y-coordinate of the center: "))
+  '(setq width (skeleton-read "the ellipse width: "))
+  '(setq heigth (skeleton-read "the ellipse heigth: "))
+  '(setq color (skeleton-read "the ellipse color: "))
+  > "imagefilledellipse(" image ", " cx ", " cy ", " width ", " heigth ", " color ");" \n
+)
+
+(define-skeleton php-imagefilledpolygon
+  "Insert an imagefilledpolygon statement. Creates a polygon filled with color."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq points (skeleton-read "Array of points determined by x and y: " ))
+  '(setq num_points (skeleton-read "Total number of vertices: "))
+  '(setq color (skeleton-read "Color to fill: "))
+  > "imagefilledpolygon(" image ", " points ", " num_points ", " color ");" \n
+)
+
+(define-skeleton php-imagefilledrectangle
+  "Insert an imagefilledrectangle statement. Creates a rectangle filled with color"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq x1 (skeleton-read "X coordinate for point 1: "))
+  '(setq y1 (skeleton-read "Y coordinate for point 1: "))
+  '(setq x2 (skeleton-read "X coordinate for point 2: "))
+  '(setq y2 (skeleton-read "Y coordinate for point 2: "))
+  '(setq color (skeleton-read "Color to fill: "))
+  > "imagefilledrectangle(" image ", " x1 ", " y1 ", " x2 ", " y2 ", " color ");" \n
+)
+
+(define-skeleton php-imagefilltoborder
+  "Insert an imagefilltoborder statement."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq x (skeleton-read "X coordinate of start: "))
+  '(setq y (skeleton-read "Y coordinate of start: "))
+  '(setq border (skeleton-read "The border color: "))
+  '(setq color (skeleton-read "Color to fill: "))
+  > "imagefilltoborder(" x ", " y ", " border ", " color ");" \n
+)
+
+(define-skeleton php-imagefilter
+  "Insert an imagefilter statement. Applies a filter to an image"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq filtertype (skeleton-read "Filter type: "))
+  '(setq arg1 (skeleton-read "Arg 1: "))
+  '(setq arg2 (skeleton-read "Arg 2: "))
+  '(setq arg3 (skeleton-read "Arg 3: "))
+  '(setq arg4 (skeleton-read "Arg 4: "))
+  > "imagefilter(" image ", " filtertype ", " arg1 ", " arg2 ", " arg3 ", " arg4 ");" \n
+)
+
+(define-skeleton php-imageflip
+  "Insert an imageflip statement. Flips an image using a given mode"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq mode (skeleton-read "Mode (IMG_FLIP_HORIZONTAL | IMG_FLIP_VERTICAL | IMG_FLIP_BOTH): "))
+  > "imageflip(" image ", " mode ");" \n
+)
+
+(define-skeleton php-imagefontheight
+  "Insert a get font height statement"
+  ""
+  '(setq font (skeleton "Font: "))
+  > "imagefontheight(" font ");" \n
+)
+
+(define-skeleton php-imagefontwidth
+  "Insert a get font width statement"
+  ""
+  '(setq font (skeleton "Font: "))
+  > "imagefontwidth(" font ");" \n
 )
