@@ -626,13 +626,89 @@
 (define-skeleton php-imagefontheight
   "Insert a get font height statement"
   ""
-  '(setq font (skeleton "Font: "))
+  '(setq font (skeleton-read "Font: "))
   > "imagefontheight(" font ");" \n
 )
 
 (define-skeleton php-imagefontwidth
   "Insert a get font width statement"
   ""
-  '(setq font (skeleton "Font: "))
+  '(setq font (skeleton-read "Font: ")) 
   > "imagefontwidth(" font ");" \n
 )
+
+(define-skeleton php-imageftbbox
+  "Insert an imageftbbox statement"
+  ""
+  '(setq size (skeleton-read "Font size: "))
+  '(setq angle (skeleton-read "Angle in degrees: "))
+  '(setq fontfile (skeleton-read "The name of the TrueType font file (can be an URL): "))
+  '(setq text (skeleton-read "The string to be measured: "))
+  '(setq extrainfo (skeleton-read "Extra information: "))
+  > "imageftbbox(" size ", " angle ", " fontfile ", " text ", " extrainfo ");" \n
+)
+
+(define-skeleton php-imagefttext
+  "Insert an imagefttext statement"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq size (skeleton-read "Font size: "))
+  '(setq angle (skeleton-read "Angle in degrees: "))
+  '(setq x (skeleton-read "X: "))
+  '(setq y (skeleton-read "Y: "))
+  '(setq color (skeleton-read "color: "))
+  '(setq fontfile (skeleton-read "The name of the TrueType font file (can be an URL): "))
+  '(setq text (skeleton-read "The string to be measured: "))
+  '(setq extrainfo (skeleton-read "Extra information: "))
+  > "imagefttext(" image ", " size ", " angle ", " x ", " y ", " color ", " fontfile ", " text ", " extrainfo ");" \n
+)
+
+(define-skeleton php-imagegammacorrect
+  "Insert an imagegammacorrect statement. Applies gamma correction."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq inputgamma (skeleton-read "Input gamma: "))
+  '(setq outputgamma (skeleton-read "Output gamma: "))
+  > "imagegammacorrect(" image ", " inputgamma ", " outputgamma ");" \n
+)
+
+(define-skeleton php-imagegd2
+  "Insert an imagegd2 statement. Output gd2 image to browser or file."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq filename (skeleton-read "Filename: "))
+  '(setq chunk_size (skeleton-read "Chunk Size: "))
+  '(setq type (skeleton-read "Type: "))
+  > "imagegd2(" image ", " filename ", " chunk_size ", " type ");" \n
+)
+
+(define-skeleton php-imagegd
+  "Insert an imagegd statement. Output g2 image to the given filename."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagegd(" image ", " filename ");" \n
+)
+
+(define-skeleton php-imagegif
+  "Insert an imagegif statement. Output image to browser or file."
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagegif(" image ", " filename ");" \n
+)
+
+(define-skeleton php-imagegrabscreen
+  "Insert an imagegrabscreen statement. Captures the whole screen."
+  ""
+  > "imagegrabscreen();" \n
+)
+
+(define-skeleton php-imagegrabwindow
+  "Insert an imagegrabwindow statement. Captures a window."
+  ""
+  '(setq window (skeleton-read "Window handle: "))
+  '(setq client_area (skeleton-read "Client area: "))
+  > "imagegrabwindow(" window ", " client_area ");" \n
+)
+
