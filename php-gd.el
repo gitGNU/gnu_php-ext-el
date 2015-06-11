@@ -712,3 +712,26 @@
   > "imagegrabwindow(" window ", " client_area ");" \n
 )
 
+(define-skeleton php-imageinterlace
+  "Insert an imageinterlace statement. Enable or disable interlace"
+  ""
+  '(setq image (skeleton-read "Image: "))
+  '(setq interlace (skeleton-read "Interlace: "))
+  > "imageinterlace(" image ", " interlace ");" \n
+)
+
+(define-skeleton php-imageistruecolor
+  "Insert an imageistruecolor statement. Finds whether an image is a truecolor image"
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  > "imageistruecolor(" image ");" \n
+)
+
+(define-skeleton php-imagejpeg
+  "Insert an imagejpeg statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq filename (skeleton-read "Filename: "))
+  '(setq quality (skeleton-read "Quality: "))
+  > "imagejpeg(" image ", " filename ", " quality ");" \n
+)
