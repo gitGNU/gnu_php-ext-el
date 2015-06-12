@@ -735,3 +735,55 @@
   '(setq quality (skeleton-read "Quality: "))
   > "imagejpeg(" image ", " filename ", " quality ");" \n
 )
+
+(define-skeleton php-imagelayereffect 
+  "Insert an imagelayereffect statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq effect (skeleton-read "Effect: "))
+  > "imagelayereffect(" image ", " effect ");" \n
+)
+
+(define-skeleton php-imageline
+  "Insert an imageline statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq x1 (skeleton-read "X1: "))
+  '(setq y1 (skeleton-read "Y1: "))
+  '(setq x2 (skeleton-read "X2: "))
+  '(setq y2 (skeleton-read "Y2: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imageline(" image ", " x1 ", " y1 ", " x2 ", " y2 ", " color ");" \n
+)
+
+(define-skeleton php-imageloadfont
+  "Load a new font."
+  ""
+  '(setq file (skeleton-read "File: "))
+  > "imageloadfont(" file ");" \n
+)
+
+(define-skeleton php-imagepalettecopy
+  "Copy the palette from one image to another."
+  ""
+  '(setq destination (skeleton-read "Destination: "))
+  '(setq source (skeleton-read "Source: "))
+  > "imagepalettecopy(" destination ", " source ");" \n
+)
+
+(define-skeleton php-imagepalettetotruecolor
+  "Converts a palette based image to true color"
+  ""
+  '(setq source (skeleton-read "Source: "))
+  > "imagepalettetotruecolor(" source ");" \n
+)
+
+(define-skeleton php-imagepng 
+  "Output a PNG image to either the browser or a file"
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq filename (skeleton-read "Filename: "))
+  '(setq quality (skeleton-read "Quality: "))
+  '(setq filters (skeleton-read "Filters: "))
+  > "imagepng(" image ", " filename ", " quality ", " filters ");" \n
+)
