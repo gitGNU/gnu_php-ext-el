@@ -787,3 +787,100 @@
   '(setq filters (skeleton-read "Filters: "))
   > "imagepng(" image ", " filename ", " quality ", " filters ");" \n
 )
+
+(define-skeleton php-imagepolygon
+  "Insert an imagepolygon statement. It draws a polygon."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq points (skeleton-read "Array of points: "))
+  '(setq num_points (skeleton-read "Number of points: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imagepolygon(" image ", " points ", " num_points ", " color ");" \n
+)
+
+(define-skeleton php-imagepsbbox
+  "Insert an imagepsbbox statement. It gives the bounding box of a text rectangle using PostScript Type1 fonts"
+  ""
+  '(setq text (skeleton-read "Text: "))
+  '(setq font (skeleton-read "Font: "))
+  '(setq size (skeleton-read "Size: "))
+  > "imagepsbbox(" text ", " font ", " size ");" \n
+)
+
+(define-skeleton php-imagepsencodefont
+  "Insert an imagepsencodefont statement. It changes the character encoding vector of a font"
+  ""
+  '(setq font_index (skeleton-read "Font index: "))
+  '(setq encodingfile (skeleton-read "Encoding file: "))
+  > "imagepsencodefont(" font_index ", " encoding_file ");" \n
+)
+
+(define-skeleton php-imagepsextendfont
+  "Insert an imagepsextendfont statement."
+  ""
+  '(setq font_index (skeleton-read "Font index: "))
+  '(setq extend (skeleton-read "Extension value: "))
+  > "imagepsextendfont(" font_index ", " extend ");" \n
+)
+
+(define-skeleton php-imagepsfreefont
+  "Insert an imagepsfreefont statement."
+  ""
+  '(setq font_index (skeleton-read "Font index: "))
+  > "imagepsfreefont(" font_index ");" \n
+)
+
+(define-skeleton php-imagepsloadfont
+  "Insert an imagepsloadfont statement."
+  ""
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagepsloadfont(" filename ");" \n
+)
+
+(define-skeleton php-imagepsslantfont
+  "Insert an imagepsslantfont statement."
+  ""
+  '(setq font_index (skeleton-read "Font index: "))
+  '(setq slant (skeleton-read "Slant: "))
+  > "imagepsslantfont(" font_index ", " slant ");" \n
+)
+
+(define-skeleton php-imagepstext
+  "Insert an imagepstext statement. Draws a text over an image using PostScript Type1 fonts"
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq text (skeleton-read "Text: "))
+  '(setq font_index (skeleton-read "Font index: "))
+  '(setq size (skeleton-read "Size: "))
+  '(setq foreground (skeleton-read "Foreground: "))
+  '(setq background (skeleton-read "Background: "))
+  '(setq x (skeleton-read "X: "))
+  '(setq y (skeleton-read "Y: "))
+  '(setq space (skeleton-read "Space: "))
+  '(setq tightness (skeleton-read "Tightness: "))
+  '(setq angle (skeleton-read "Angle: "))
+  '(setq antialias_steps (skeleton-read "Antialias steps: "))
+  > "imagepstext(" image ", " text ", " font_index ", " size ", " foreground ", " background ", " x ", " y ", " space ", " tightness ", " angle ", " antialias ");" \n
+)
+
+(define-skeleton php-imagerectangle
+  "Insert an imagerectangle statement"
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq x1 (skeleton-read "X1: "))
+  '(setq y1 (skeleton-read "Y1: "))
+  '(setq x2 (skeleton-read "X2: "))
+  '(setq y2 (skeleton-read "Y2: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imagerectangle(" image ", " x1 ", " y1 ", " x2 ", " y2 ", " color ");" \n
+)
+
+(define-skeleton php-imagerotate
+  "Insert an imagerotate statement. Rotate an image with a given angle."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq angle (skeleton-read "Angle: "))
+  '(setq bgd_color (skeleton-read "Color of the uncovered zone: "))
+  '(setq ignore_transparent (skeleton-read "Ignore transparent? "))
+  > "imagerotate(" image ", " angle ", " bgd_color ", " ignore_transparent ");" \n
+)
