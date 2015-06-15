@@ -884,3 +884,47 @@
   '(setq ignore_transparent (skeleton-read "Ignore transparent? "))
   > "imagerotate(" image ", " angle ", " bgd_color ", " ignore_transparent ");" \n
 )
+
+(define-skeleton php-imagesavealpha
+  "Insert an imagesavealpha statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq saveflag (skeleton-read "Save Flag: "))
+  > "imagesavealpha(" image ", " saveflag ");" \n
+)
+
+(define-skeleton php-imagescale
+  "Insert an imagescale statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq new_width (skeleton-read "New width: "))
+  '(setq new_height (skeleton-read "New height: "))
+  '(setq mode (skeleton-read "Mode: "))
+  > "imagescale(" image ", " new_width ", " new_height ", " mode ");" \n
+)
+
+(define-skeleton php-imagesetbrush
+  "Insert an imagesetbrush statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq brush (skeleton-read "Resource Brush: "))
+  > "imagesetbrush(" image ", " brush ");" \n
+)
+
+(define-skeleton php-imagesetinterpolation
+  "Insert an imagesetinterpolation statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq interpolation (skeleton-read "Interpolation Method: "))
+  > "imagesetinterpolation(" image ", " interpolation ");" \n
+)
+
+(define-skeleton php-imagesetpixel
+  "Insert an imagesetpixel statement."
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq x (skeleton-read "X: "))
+  '(setq y (skeleton-read "Y: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imagesetpixel(" image ", " x ", " y ", " color ");" \n
+)
+  
