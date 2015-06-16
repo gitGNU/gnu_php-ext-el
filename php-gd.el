@@ -921,10 +921,36 @@
 
 (define-skeleton php-imagesetpixel
   "Insert an imagesetpixel statement."
+  ""
   '(setq image (skeleton-read "Resource Image: "))
   '(setq x (skeleton-read "X: "))
   '(setq y (skeleton-read "Y: "))
   '(setq color (skeleton-read "Color: "))
   > "imagesetpixel(" image ", " x ", " y ", " color ");" \n
 )
+  
+(define-skeleton php-imagesetstyle
+  "Insert an imagesetstyle statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq style (skeleton-read "Array style: "))
+  > "imagesetstyle(" image ", " style ");" \n
+)
+  
+(define-skeleton php-imagesetthickness
+  "Insert an imagesetthickness statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq thickness (skeleton-read "Array thickness: "))
+  > "imagesetthickness(" image ", " thickness ");" \n
+)
+  
+(define-skeleton php-imagesettile
+  "Insert an imagesettile statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq tile (skeleton-read "Resource Tile: "))
+  > "imagesettile(" image ", " tile ");" \n
+)
+  
   
