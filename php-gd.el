@@ -953,4 +953,89 @@
   > "imagesettile(" image ", " tile ");" \n
 )
   
-  
+(define-skeleton php-imagestring
+  "Insert an imagestring statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq font (skeleton-read "Font: "))
+  '(setq x (skeleton-read "X: "))
+  '(setq y (skeleton-read "Y: "))
+  '(setq string (skeleton-read "String: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imagestring(" image ", " font ", " x ", " y ", " string ", " color ");" \n
+)
+
+(define-skeleton php-imagestringup
+  "Insert an imagestring statement. Draws a string vertically"
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq font (skeleton-read "Font: "))
+  '(setq x (skeleton-read "X: "))
+  '(setq y (skeleton-read "Y: "))
+  '(setq string (skeleton-read "String: "))
+  '(setq color (skeleton-read "Color: "))
+  > "imagestringup(" image ", " font ", " x ", " y ", " string ", " color ");" \n
+)
+
+(define-skeleton php-imagesx
+  "Insert an imagesx statement. Get image width."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  > "imagesx(" image ");" \n
+)
+
+(define-skeleton php-imagesy
+  "Insert an imagesy statement. Get image heigth."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  > "imagesx(" image ");" \n
+)
+
+(define-skeleton php-imagetruecolortopalette
+  "Insert an imagetruecolortopalette statement. Convert a true color image to a palette image."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq dither (skeleton-read "Dither: "))
+  '(setq ncolors (skeleton-read "Maximum number of colors in the palette: "))
+  > "imagetruecolortopalette(" image ", " dither ", " ncolors ");" \n
+)
+
+(define-skeleton php-imagettfbbox
+  "Insert an imagettfbbox statement."
+  ""
+  '(setq size (skeleton-read "Size: "))
+  '(setq angle (skeleton-read "Angle: "))
+  '(setq fontfile (skeleton-read "The name of the TrueType font file: "))
+  '(setq text (skeleton-read "String to be measured"))
+  > "imagettfbbox(" size ", " angle ", " fontfile ", " text ");" \n
+)
+
+(define-skeleton php-imagettftext
+  "Insert an imagettftext statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq size (skeleton-read "Size: "))
+  '(setq angle (skeleton-read "Angle: "))
+  '(setq x (skeleton-read "X: "))
+  '(setq y (skeleton-read "Y: "))
+  '(setq string (skeleton-read "String: "))
+  '(setq color (skeleton-read "Color: "))
+  '(setq fontfile (skeleton-read "Fontfile: "))  
+  '(setq text (skeleton-read "The text in UTF-8: "))  
+  > "imagettftext(" image ", " size ", " angle ", " x ", " y ", " string ", " color ", " fontfile ", " text ");" \n
+)
+
+(define-skeleton php-imagetypes
+  "Insert an imagetypes statement."
+  ""
+  > "imagetypes();"
+)
+
+(define-skeleton php-imagewbmp
+  "Insert an imagewbmp statement. Output image to browser or file"
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq filename (skeleton-read "Filename: "))
+  '(setq foreground (skeleton-read "Foreground: "))
+  > "imagewbmp(" image ", " filename ", " foreground ");" \n
+)
