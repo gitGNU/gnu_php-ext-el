@@ -1039,3 +1039,59 @@
   '(setq foreground (skeleton-read "Foreground: "))
   > "imagewbmp(" image ", " filename ", " foreground ");" \n
 )
+
+(define-skeleton php-imagewebp
+  "Insert an imagewebp statement."
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq filename (skeleton-read "Filename: "))
+  > "imagewebp(" image ", " filename ");" \n
+)
+
+(define-skeleton php-imagexbm
+  "Insert an imagexbm statement. Output an xbm image to browser or file"
+  ""
+  '(setq image (skeleton-read "Resource Image: "))
+  '(setq filename (skeleton-read "Filename: "))
+  '(setq foreground (skeleton-read "Foreground: "))
+  > "imagexbm(" image ", " filename ", " foreground ");" \n
+)
+
+(define-skeleton php-iptcembed
+  "Insert an iptcembed statement. Embeds a binary iptc data into a jpeg image"
+  ""
+  '(setq iptcdata (skeleton-read "The iptc data: "))
+  '(setq jpeg_filename (skeleton-read "Path to jpeg image: "))
+  '(setq spool (skeleton-read "Spool flag: "))
+  > "iptcembed(" iptcdata ", " jpeg_filename ", " spool ");" \n
+)
+
+(define-skeleton php-iptcparse
+  "Insert an iptcparse statement. Parse a binary IPTC block into single tags."
+  ""
+  '(setq iptcblock (skeleton-read "The iptc block: "))
+  > "iptcparse(" iptcblock ");" \n
+)
+
+(define-skeleton php-jpeg2wbmp
+  "Insert a jpeg2wbmp. Convert JPEG image file to WBMP image file"
+  ""
+  '(setq jpegname (skeleton-read "Path to jpeg: "))
+  '(setq wbmpname (skeleton-read "Path to destination wbmp: "))
+  '(setq dest_height (skeleton-read "Destination image height: "))
+  '(setq dest_width (skeleton-read "Destination image width: "))
+  '(setq treshold (skeleton-read "Treshold: "))
+  > "jpeg2wbmp(" jpegname ", " wbmpname ", " dest_height ", " dest_width ", " treshold ");" \n
+)
+
+(define-skeleton php-png2wbmp
+  "Insert a png2wbmp. Convert PNG image file to WBMP image file"
+  ""
+  '(setq pngname (skeleton-read "Path to png: "))
+  '(setq wbmpname (skeleton-read "Path to destination wbmp: "))
+  '(setq dest_height (skeleton-read "Destination image height: "))
+  '(setq dest_width (skeleton-read "Destination image width: "))
+  '(setq treshold (skeleton-read "Treshold: "))
+  > "png2wbmp(" pngname ", " wbmpname ", " dest_height ", " dest_width ", " treshold ");" \n
+)
+
