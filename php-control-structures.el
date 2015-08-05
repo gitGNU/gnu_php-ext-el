@@ -47,9 +47,9 @@
 (define-skeleton php-foreach
   "Insert a foreach statement."
   ""
-  '(setq index (skeleton-read "Index variable? ")) \n
+  '(setq value (skeleton-read "Value variable? ")) \n
   '(setq array (skeleton-read "Array? ")) \n
-  > "foreach (" index " as " array ") {" \n
+  > "foreach (" array " as " value ") {" \n
   > _ \n
   > -2 "}" \n)
 
@@ -73,6 +73,16 @@
     > -2 "break;" \n
  )
   "}")
+
+(define-skeleton php-switch-case
+  "Insert a switch statement."
+  ""
+  ( "Some case? %s: "
+    > "case " str ":" \n
+    > _ \n
+    > -2 "break;" \n
+ )
+)
 
 
 (define-skeleton php-include
