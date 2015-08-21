@@ -252,6 +252,18 @@
   > ");"
 )
 
+(define-skeleton php-var_dump-die
+  "Insert a var_dump statement"
+  ""
+  '(setq variable (skeleton-read "Variable? "))
+  > "var_dump(" variable 
+  ( "Other variable? %s: "
+    > ", " str )
+  > ");" \n
+  > "die();" \n
+)
+
+
 (define-skeleton php-var_export
   "Insert a var_export statement"
   ""
