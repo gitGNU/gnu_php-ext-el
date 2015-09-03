@@ -56,9 +56,10 @@
 (define-skeleton php-for
   "Insert a for statement."
   ""
-  '(setq index (skeleton-read "Index variable? ")) \n
+  '(setq init (skeleton-read "Init Counter? ")) \n
   '(setq condition (skeleton-read "Condition? ")) \n
-  > "for (" condition "; " index "++) {" \n
+  '(setq increment (skeleton-read "Incrementer counter? ")) \n
+  > "for (" init "; " condition "; " index ") {" \n
   > _ \n
   > -2 "}" \n)
 
