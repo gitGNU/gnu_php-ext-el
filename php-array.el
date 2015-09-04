@@ -295,4 +295,94 @@
   > "array_rand(" array ", " num ");" \n
 )
 
+(define-skeleton php-array_reduce
+  "Insert a array_reduce statement. Iteratively reduce the array to a single value using a callback function"
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq callback (skeleton-read "callback: "))
+  '(setq initial (skeleton-read "initial: "))
+  > "array_reduce(" array ", " callback ", " initial ");" \n
+)
 
+(define-skeleton php-array_replace_recursive
+  "Insert a array_replace_recursive statement. Replaces elements from passed arrays into the first array recursively"
+  ""
+  '(setq array1 (skeleton-read "array1: "))
+  '(setq array2 (skeleton-read "array2: "))
+  > "array_replace_recursive(" array1 ", " array2 
+  ( "another array?, %s: "
+    ", " str)
+  ");" \n
+)
+
+(define-skeleton php-array_replace
+  "Insert a array_replace statement."
+  ""
+  '(setq array1 (skeleton-read "array1: "))
+  '(setq array2 (skeleton-read "array2: "))  
+  > "array_replace(" array1 ", " array2
+  ( "another array?, %s: "
+    ", " str)
+  ");" \n
+)
+
+(define-skeleton php-array_reverse
+  "Insert a array_reverse statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq preserve_keys (skeleton-read "preserve_keys: "))
+  > "array_reverse(" array ", " preserve_keys ");" \n
+)
+
+(define-skeleton php-array_search
+  "Insert a array_search statement."
+  ""
+  '(setq needle (skeleton-read "needle: "))
+  '(setq array (skeleton-read "array: "))
+  '(setq strict (skeleton-read "strict: "))
+  > "array_search(" needle ", " array ", " strict ");" \n
+)
+
+(define-skeleton php-array_shift
+  "Insert a array_shift statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "array_shift(" array ");" \n
+)
+
+(define-skeleton php-array_slice
+  "Insert a array_slice statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq offset (skeleton-read "offset: "))
+  '(setq length (skeleton-read "length: "))
+  '(setq preserve_keys (skeleton-read "preserve_keys: "))
+  > "array_slice(" array ", " offset ", " length ", " preserve_keys ");" \n
+)
+
+(define-skeleton php-array_splice
+  "Insert a array_slice statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq offset (skeleton-read "offset: "))
+  '(setq length (skeleton-read "length: "))
+  '(setq replacement (skeleton-read "replacement: "))
+  > "array_slice(" array ", " offset ", " length ", " replacement ");" \n
+)
+
+(define-skeleton php-array_sum
+  "Insert a array_sum statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "array_sum(" array ");" \n
+)
+
+
+(define-skeleton php-in_array
+  "Insert a in_array statement. Checks if a value exists in an array"
+  ""
+  '(setq value (skeleton-read "value: "))
+  '(setq array (skeleton-read "array: "))
+  '(setq strict (skeleton-read "strict: "))
+  > "in_array(" value ", " array ", " strict ");" \n
+)
