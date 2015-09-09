@@ -551,6 +551,16 @@
   > "end(" array ");" \n
 )
 
+(define-skeleton php-extract
+  "Insert a extract statement. Import variables into the current symbol table from an array"
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq flags (skeleton-read "flags: "))
+  '(setq prefix (skeleton-read "prefix: "))
+  > "extract(" array ", " flags ", " prefix ");" \n
+)
+
+
 (define-skeleton php-in_array
   "Insert an in_array statement. Checks if a value exists in an array"
   ""
@@ -558,4 +568,74 @@
   '(setq array (skeleton-read "array: "))
   '(setq strict (skeleton-read "strict: "))
   > "in_array(" value ", " array ", " strict ");" \n
+)
+
+(define-skeleton php-key_exists
+  "Insert a key_exists statement. Alias of array_key_exists. Checks if the given key or index exists in the array"
+  ""
+  '(setq key (skeleton-read "key: "))
+  '(setq array (skeleton-read "array: "))
+  > "key_exists(" key ", " array");" \n
+)
+
+(define-skeleton php-key
+  "Insert a key statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "key(" array ");" \n
+)
+
+(define-skeleton php-krsort
+  "Insert a krsort statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq sort_flags (skeleton-read "sort_flags: "))
+  > "krsort(" array ", " sort_flags ");" \n
+)
+
+(define-skeleton php-ksort
+  "Insert a ksort statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq sort_flags (skeleton-read "sort_flags: "))  
+  > "ksort(" array ", " sort_flags ");" \n
+)
+
+
+(define-skeleton php-list
+  "Insert a list statement."
+  ""
+  '(setq var1 (skeleton-read "var1: "))
+  > "list(" var1
+  ( "another variable?, %s: "
+    ", " str)
+  ");" \n
+)
+
+(define-skeleton php-natcasesort
+  "Insert a natcasesort statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "natcasesort(" array ");" \n
+)
+
+(define-skeleton php-natsort
+  "Insert a natsort statement. Sort an array using a natural order algorithm"
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "natsort(" array ");" \n
+)
+
+(define-skeleton php-next
+  "Insert a next statement. Advance the internal array pointer of an array"
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "next(" array ");" \n
+)
+
+(define-skeleton php-pos
+  "Insert a pos statement. Alias of current. Return the current element in an array"
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "pos(" array ");" \n
 )
