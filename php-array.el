@@ -23,7 +23,7 @@
 ;; file:///usr/share/doc/php-doc/html/ref.array.html
 
 (define-skeleton php-array_change_key_case
-  "Insert a array_change_key_case statement. Changes the case of all keys in an array"
+  "Insert an array_change_key_case statement. Changes the case of all keys in an array"
   ""
   '(setq array (skeleton-read "array: "))
   '(setq case (skeleton-read "case: "))
@@ -31,7 +31,7 @@
 )
 
 (define-skeleton php-array_chunk
-  "Insert a array_chunk statement. Split an array into chunks"
+  "Insert an array_chunk statement. Split an array into chunks"
   ""
   '(setq array (skeleton-read "array: "))
   '(setq size (skeleton-read "size: "))
@@ -40,7 +40,7 @@
 )
 
 (define-skeleton php-array_column
-  "Insert a array_column statement. Return the values from a single column in the input array"
+  "Insert an array_column statement. Return the values from a single column in the input array"
   ""
   '(setq array (skeleton-read "array: "))
   '(setq column_key (skeleton-read "column_key: "))
@@ -49,7 +49,7 @@
 )
 
 (define-skeleton php-array_combine
-  "Insert a array_combine statement. Creates an array by using one array for keys and another for its values"
+  "Insert an array_combine statement. Creates an array by using one array for keys and another for its values"
   ""
   '(setq keys (skeleton-read "keys: "))
   '(setq values (skeleton-read "values: "))
@@ -57,14 +57,14 @@
 )
 
 (define-skeleton php-array_count_values
-  "Insert a array_count_values statement. Counts all the values of an array"
+  "Insert an array_count_values statement. Counts all the values of an array"
   ""
   '(setq array (skeleton-read "array: "))
   > "array_count_values(" array ");" \n
 )
 
 (define-skeleton php-array_diff_assoc
-  "Insert a array_diff_assoc statement. Computes the difference of arrays with additional index check"
+  "Insert an array_diff_assoc statement. Computes the difference of arrays with additional index check"
   ""
   '(setq array (skeleton-read "array: "))
   > "array_diff_assoc(" array   
@@ -74,7 +74,7 @@
 )
 
 (define-skeleton php-array_diff_key
-  "Insert a array_diff_key statement. Computes the difference of arrays using keys for comparison"
+  "Insert an array_diff_key statement. Computes the difference of arrays using keys for comparison"
   ""
   '(setq array (skeleton-read "array: "))
   > "array_diff_key(" array   
@@ -85,7 +85,7 @@
 
 
 (define-skeleton php-array_diff_uassoc
-  "Insert a array_diff_uassoc statement."
+  "Insert an array_diff_uassoc statement."
   ""
   '(setq array (skeleton-read "array: "))
   > "array_diff_uassoc(" array   
@@ -96,7 +96,7 @@
 
 
 (define-skeleton php-array_diff_ukey
-  "Insert a array_diff_ukey statement. Computes the difference of arrays using a callback function on the keys for comparison"
+  "Insert an array_diff_ukey statement. Computes the difference of arrays using a callback function on the keys for comparison"
   ""
   '(setq array (skeleton-read "array: "))
   > "array_diff_ukey(" array   
@@ -107,7 +107,7 @@
 
 
 (define-skeleton php-array_diff
-  "Insert a array_diff statement. Computes the difference of arrays"
+  "Insert an array_diff statement. Computes the difference of arrays"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))
@@ -118,7 +118,7 @@
 )
 
 (define-skeleton php-array_fill_keys
-  "Insert a array_fill_keys statement."
+  "Insert an array_fill_keys statement."
   ""
   '(setq keys (skeleton-read "keys: "))
   '(setq value (skeleton-read "value: "))
@@ -126,7 +126,7 @@
 )
 
 (define-skeleton php-array_fill
-  "Insert a array_fill statement."
+  "Insert an array_fill statement."
   ""
   '(setq start_index (skeleton-read "start_index: "))
   '(setq num (skeleton-read "num: "))
@@ -135,7 +135,7 @@
 )
 
 (define-skeleton php-array_filter
-  "Insert a array_filter statement."
+  "Insert an array_filter statement."
   ""
   '(setq array (skeleton-read "array: "))
   '(setq callback (skeleton-read "callback: "))
@@ -143,14 +143,14 @@
 )
 
 (define-skeleton php-array_flip
-  "Insert a array_flip statement."
+  "Insert an array_flip statement."
   ""
   '(setq array (skeleton-read "array: "))
   > "array_flip(" array ");" \n
 )
 
 (define-skeleton php-array_intersect_key
-  "Insert a array_intersect_key statement. Computes the intersection of arrays using keys for comparison"
+  "Insert an array_intersect_key statement. Computes the intersection of arrays using keys for comparison"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))
@@ -161,7 +161,7 @@
 )
 
 (define-skeleton php-array_intersect_uassoc
-  "Insert a array_intersect_uassoc statement. "
+  "Insert an array_intersect_uassoc statement. "
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))
@@ -173,7 +173,7 @@
 )
 
 (define-skeleton php-array_intersect_ukey
-  "Insert a array_intersect_ukey statement. Computes the intersection of arrays using a callback function on the keys for comparison"
+  "Insert an array_intersect_ukey statement. Computes the intersection of arrays using a callback function on the keys for comparison"
   ""  
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))
@@ -185,7 +185,7 @@
 )
 
 (define-skeleton php-array_intersect
-  "Insert a array_intersect statement. Computes the intersection of arrays
+  "Insert an array_intersect statement. Computes the intersection of arrays
 "
   ""
   '(setq array1 (skeleton-read "array1: "))
@@ -197,7 +197,7 @@
 )
 
 (define-skeleton php-array_key_exists
-  "Insert a array_key_exists statement. Checks if the given key or index exists in the array"
+  "Insert an array_key_exists statement. Checks if the given key or index exists in the array"
   ""
   '(setq key (skeleton-read "key: "))
   '(setq array (skeleton-read "array: "))
@@ -205,7 +205,7 @@
 )
 
 (define-skeleton php-array_keys
-  "Insert a array_keys statement. Return all the keys or a subset of the keys of an array"
+  "Insert an array_keys statement. Return all the keys or a subset of the keys of an array"
   ""
   '(setq array (skeleton-read "array: "))
   '(setq search_value (skeleton-read "search_value: "))
@@ -214,7 +214,7 @@
 )
 
 (define-skeleton php-array_map
-  "Insert a array_map statement. Applies the callback to the elements of the given arrays"
+  "Insert an array_map statement. Applies the callback to the elements of the given arrays"
   ""
   '(setq callback (skeleton-read "callback: "))
   '(setq array1 (skeleton-read "array1: "))
@@ -225,7 +225,7 @@
 )
 
 (define-skeleton php-array_merge_recursive
-  "Insert a array_merge_recursive statement. Merge two or more arrays recursively"
+  "Insert an array_merge_recursive statement. Merge two or more arrays recursively"
   ""
   '(setq array1 (skeleton-read "array1: "))
   > "array_merge_recursive(" array1 
@@ -235,7 +235,7 @@
 )
 
 (define-skeleton php-array_merge
-  "Insert a array_merge statement. Merge two or more arrays recursively"
+  "Insert an array_merge statement. Merge two or more arrays recursively"
   ""
   '(setq array1 (skeleton-read "array1: "))
   > "array_merge(" array1 
@@ -245,7 +245,7 @@
 )
 
 (define-skeleton php-array_multisort
-  "Insert a array_multisort statement. Sort multiple or multi-dimensional arrays"
+  "Insert an array_multisort statement. Sort multiple or multi-dimensional arrays"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array1_sort_order (skeleton-read "array1_sort_order: "))
@@ -254,7 +254,7 @@
 )
 
 (define-skeleton php-array_pad
-  "Insert a array_pad statement. Pad array to the specified length with a value"
+  "Insert an array_pad statement. Pad array to the specified length with a value"
   ""
   '(setq array (skeleton-read "array: "))
   '(setq size (skeleton-read "size: "))
@@ -263,21 +263,21 @@
 )
 
 (define-skeleton php-array_pop
-  "Insert a array_pop statement."
+  "Insert an array_pop statement."
   ""
   '(setq array (skeleton-read "array: "))
   > "array_pop(" array ");" \n
 )
 
 (define-skeleton php-array_product
-  "Insert a array_product statement."
+  "Insert an array_product statement."
   ""
   '(setq array (skeleton-read "array: "))
   > "array_product(" array ");" \n
 )
 
 (define-skeleton php-array_push
-  "Insert a array_push statement."
+  "Insert an array_push statement."
   ""
   '(setq array (skeleton-read "array: "))
   '(setq value1 (skeleton-read "value1: "))
@@ -288,7 +288,7 @@
 )
 
 (define-skeleton php-array_rand
-  "Insert a array_rand statement."
+  "Insert an array_rand statement."
   ""
   '(setq array (skeleton-read "array: "))
   '(setq num (skeleton-read "num: "))
@@ -296,7 +296,7 @@
 )
 
 (define-skeleton php-array_reduce
-  "Insert a array_reduce statement. Iteratively reduce the array to a single value using a callback function"
+  "Insert an array_reduce statement. Iteratively reduce the array to a single value using a callback function"
   ""
   '(setq array (skeleton-read "array: "))
   '(setq callback (skeleton-read "callback: "))
@@ -305,7 +305,7 @@
 )
 
 (define-skeleton php-array_replace_recursive
-  "Insert a array_replace_recursive statement. Replaces elements from passed arrays into the first array recursively"
+  "Insert an array_replace_recursive statement. Replaces elements from passed arrays into the first array recursively"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))
@@ -316,7 +316,7 @@
 )
 
 (define-skeleton php-array_replace
-  "Insert a array_replace statement."
+  "Insert an array_replace statement."
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))  
@@ -327,7 +327,7 @@
 )
 
 (define-skeleton php-array_reverse
-  "Insert a array_reverse statement."
+  "Insert an array_reverse statement."
   ""
   '(setq array (skeleton-read "array: "))
   '(setq preserve_keys (skeleton-read "preserve_keys: "))
@@ -335,7 +335,7 @@
 )
 
 (define-skeleton php-array_search
-  "Insert a array_search statement."
+  "Insert an array_search statement."
   ""
   '(setq needle (skeleton-read "needle: "))
   '(setq array (skeleton-read "array: "))
@@ -344,14 +344,14 @@
 )
 
 (define-skeleton php-array_shift
-  "Insert a array_shift statement."
+  "Insert an array_shift statement."
   ""
   '(setq array (skeleton-read "array: "))
   > "array_shift(" array ");" \n
 )
 
 (define-skeleton php-array_slice
-  "Insert a array_slice statement."
+  "Insert an array_slice statement."
   ""
   '(setq array (skeleton-read "array: "))
   '(setq offset (skeleton-read "offset: "))
@@ -361,7 +361,7 @@
 )
 
 (define-skeleton php-array_splice
-  "Insert a array_slice statement."
+  "Insert an array_slice statement."
   ""
   '(setq array (skeleton-read "array: "))
   '(setq offset (skeleton-read "offset: "))
@@ -371,14 +371,14 @@
 )
 
 (define-skeleton php-array_sum
-  "Insert a array_sum statement."
+  "Insert an array_sum statement."
   ""
   '(setq array (skeleton-read "array: "))
   > "array_sum(" array ");" \n
 )
 
 (define-skeleton php-array_udiff_assoc
-  "Insert a array_udiff_assoc statement. Computes the difference of arrays with additional index check, compares data by a callback function"
+  "Insert an array_udiff_assoc statement. Computes the difference of arrays with additional index check, compares data by a callback function"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))
@@ -389,7 +389,7 @@
 )
 
 (define-skeleton php-array_udiff_uassoc
-  "Insert a array_udiff_assoc statement. Computes the difference of arrays with additional index check, compares data and indexes by a callback function"
+  "Insert an array_udiff_assoc statement. Computes the difference of arrays with additional index check, compares data and indexes by a callback function"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))
@@ -402,7 +402,7 @@
 )
 
 (define-skeleton php-array_udiff
-  "Insert a array_udiff_assoc statement. Computes the difference of arrays by using a callback function for data comparison"
+  "Insert an array_udiff_assoc statement. Computes the difference of arrays by using a callback function for data comparison"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))
@@ -413,7 +413,7 @@
 )
 
 (define-skeleton php-array_uintersect_assoc
-  "Insert a array_uintersect_assoc statement. Computes the intersection of arrays with additional index check, compares data by a callback function"
+  "Insert an array_uintersect_assoc statement. Computes the intersection of arrays with additional index check, compares data by a callback function"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))  
@@ -424,7 +424,7 @@
 )
 
 (define-skeleton php-array_uintersect_uassoc
-  "Insert a array_uintersect_uassoc statement. Computes the intersection of arrays with additional index check, compares data and indexes by a callback functions"
+  "Insert an array_uintersect_uassoc statement. Computes the intersection of arrays with additional index check, compares data and indexes by a callback functions"
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))  
@@ -436,7 +436,7 @@
 )
 
 (define-skeleton php-array_uintersect
-  "Insert a array_uintersect statement."
+  "Insert an array_uintersect statement."
   ""
   '(setq array1 (skeleton-read "array1: "))
   '(setq array2 (skeleton-read "array2: "))    
@@ -447,7 +447,7 @@
 )
 
 (define-skeleton php-array_unique
-  "Insert a array_unique statement. Removes duplicate values from an array"
+  "Insert an array_unique statement. Removes duplicate values from an array"
   ""
   '(setq array (skeleton-read "array: "))
   '(setq sort_flags (skeleton-read "sort_flags: "))
@@ -455,7 +455,7 @@
 )
 
 (define-skeleton php-array_unshift
-  "Insert a array_unshift statement. Prepend one or more elements to the beginning of an array"
+  "Insert an array_unshift statement. Prepend one or more elements to the beginning of an array"
   ""
   '(setq array (skeleton-read "array: "))
   '(setq value1 (skeleton-read "value1: "))
@@ -466,14 +466,93 @@
 )
 
 (define-skeleton php-array_values
-  "Insert a array_values statement."
+  "Insert an array_values statement."
   ""
   '(setq array (skeleton-read "array: "))
   > "array_values(" array ");" \n
 )
 
+(define-skeleton php-array_walk_recursive
+  "Insert an array_walk_recursive statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq callback (skeleton-read "callback: "))
+  '(setq userdata (skeleton-read "userdata: "))
+  > "array_walk_recursive(" array ", " callback ", " userdata ");" \n
+)
+
+(define-skeleton php-array_walk
+  "Insert an array_walk statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq callback (skeleton-read "callback: "))
+  '(setq userdata (skeleton-read "userdata: "))
+  > "array_walk(" array ", " callback ", " userdata ");" \n
+)
+
+(define-skeleton php-array
+  "Insert an array statement."
+  ""
+  > "array(" _ ");" \n
+)
+
+(define-skeleton php-arsort
+  "Insert an arsort statement. Sort an array in reverse order and maintain index association"
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq sort_flags (skeleton-read "sort_flags: "))
+  > "arsort(" array ", " sort_flags ");" \n
+)
+
+(define-skeleton php-asort
+  "Insert an asort statement. Sort an array and maintain index association"
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq sort_flags (skeleton-read "sort_flags: "))  
+  > "asort(" array ", " sort_flags ");" \n
+)
+
+(define-skeleton php-compact
+  "Insert a compact statement. Create array containing variables and their values"
+  ""
+  '(setq var1 (skeleton-read "variable 1: "))
+  > "compact(" var1
+  ( "another variable?, %s: "
+    ", " str)
+  ");" \n
+)
+
+(define-skeleton php-count
+  "Insert a count statement. Count all elements in an array, or something in an object"
+  ""
+  '(setq array_or_countable (skeleton-read "array_or_countable: "))
+  '(setq mode (skeleton-read "mode: "))
+  > "count(" array_or_countable ", " mode ");" \n
+)
+
+(define-skeleton php-current
+  "Insert a current statement. Return the current element in an array"
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "current(" array ");" \n
+)
+
+(define-skeleton php-each
+  "Insert a each statement. Return the current key and value pair from an array and advance the array cursor"
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "each(" array ");" \n
+)
+
+(define-skeleton php-end
+  "Insert a end statement. Set the internal pointer of an array to its last element"
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "end(" array ");" \n
+)
+
 (define-skeleton php-in_array
-  "Insert a in_array statement. Checks if a value exists in an array"
+  "Insert an in_array statement. Checks if a value exists in an array"
   ""
   '(setq value (skeleton-read "value: "))
   '(setq array (skeleton-read "array: "))
