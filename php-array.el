@@ -377,6 +377,100 @@
   > "array_sum(" array ");" \n
 )
 
+(define-skeleton php-array_udiff_assoc
+  "Insert a array_udiff_assoc statement. Computes the difference of arrays with additional index check, compares data by a callback function"
+  ""
+  '(setq array1 (skeleton-read "array1: "))
+  '(setq array2 (skeleton-read "array2: "))
+  > "array_udiff_assoc(" array1 ", " array2 
+  ( "another array?, %s: "
+    ", " str)
+  ", " (skeleton-read "value compare func: ") ");" \n
+)
+
+(define-skeleton php-array_udiff_uassoc
+  "Insert a array_udiff_assoc statement. Computes the difference of arrays with additional index check, compares data and indexes by a callback function"
+  ""
+  '(setq array1 (skeleton-read "array1: "))
+  '(setq array2 (skeleton-read "array2: "))
+  > "array_udiff_assoc(" array1 ", " array2 
+  ( "another array?, %s: "
+    ", " str)
+  ", " (skeleton-read "value compare func: ") 
+  ", " (skeleton-read "key compare func: ") 
+  ");" \n
+)
+
+(define-skeleton php-array_udiff
+  "Insert a array_udiff_assoc statement. Computes the difference of arrays by using a callback function for data comparison"
+  ""
+  '(setq array1 (skeleton-read "array1: "))
+  '(setq array2 (skeleton-read "array2: "))
+  > "array_udiff(" array1 ", " array2 
+  ( "another array?, %s: "
+    ", " str)
+  ", " (skeleton-read "value compare func: ") ");" \n
+)
+
+(define-skeleton php-array_uintersect_assoc
+  "Insert a array_uintersect_assoc statement. Computes the intersection of arrays with additional index check, compares data by a callback function"
+  ""
+  '(setq array1 (skeleton-read "array1: "))
+  '(setq array2 (skeleton-read "array2: "))  
+  > "array_uintersect_assoc(" array1 ", " array2 
+  ( "another array?, %s: "
+    ", " str)
+  ", " (skeleton-read "value compare func: ") ");" \n  
+)
+
+(define-skeleton php-array_uintersect_uassoc
+  "Insert a array_uintersect_uassoc statement. Computes the intersection of arrays with additional index check, compares data and indexes by a callback functions"
+  ""
+  '(setq array1 (skeleton-read "array1: "))
+  '(setq array2 (skeleton-read "array2: "))  
+  > "array_uintersect_uassoc(" array1 ", " array2 
+  ( "another array?, %s: "
+    ", " str)
+  ", " (skeleton-read "value compare func: ")  
+  ", " (skeleton-read "key compare func: ") ");" \n  
+)
+
+(define-skeleton php-array_uintersect
+  "Insert a array_uintersect statement."
+  ""
+  '(setq array1 (skeleton-read "array1: "))
+  '(setq array2 (skeleton-read "array2: "))    
+  > "array_uintersect(" array1 ", " array2
+  ( "another array?, %s: "
+    ", " str)
+  ", " (skeleton-read "value compare func: ") ");" \n  
+)
+
+(define-skeleton php-array_unique
+  "Insert a array_unique statement. Removes duplicate values from an array"
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq sort_flags (skeleton-read "sort_flags: "))
+  > "array_unique(" array ", " sort_flags ");" \n
+)
+
+(define-skeleton php-array_unshift
+  "Insert a array_unshift statement. Prepend one or more elements to the beginning of an array"
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq value1 (skeleton-read "value1: "))
+  > "array_unshift(" array ", " value1
+  ( "another value?, %s: "
+    ", " str)
+  ");" \n 
+)
+
+(define-skeleton php-array_values
+  "Insert a array_values statement."
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "array_values(" array ");" \n
+)
 
 (define-skeleton php-in_array
   "Insert a in_array statement. Checks if a value exists in an array"
