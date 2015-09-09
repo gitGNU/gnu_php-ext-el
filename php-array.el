@@ -639,3 +639,80 @@
   '(setq array (skeleton-read "array: "))
   > "pos(" array ");" \n
 )
+
+(define-skeleton php-prev
+  "Insert a prev statement. Rewind the internal array pointer"
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "prev(" array ");" \n
+)
+
+(define-skeleton php-range
+  "Insert a range statement. Create an array containing a range of elements"
+  ""
+  '(setq start (skeleton-read "start: "))
+  '(setq end (skeleton-read "end: "))
+  '(setq step (skeleton-read "step: "))
+  > "range(" start ", " end ", " step ");" \n
+)
+
+(define-skeleton php-reset
+  "Insert a reset statement. Set the internal pointer of an array to its first element"
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "reset(" array ");" \n
+)
+
+(define-skeleton php-rsort
+  "Insert a rsort statement. Sort an array in reverse order"
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq sort_flags (skeleton-read "sort_flags: "))
+  > "rsort(" array ", " sort_flags ");" \n
+)
+
+(define-skeleton php-shuffle
+  "Insert a shuffle statement. This function shuffles (randomizes the order of the elements in) an array. "
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "shuffle(" array ");" \n
+)
+
+(define-skeleton php-sizeof
+  "Insert a sizeof statement. Alias of count."
+  ""
+  '(setq array (skeleton-read "array: "))
+  > "sizeof(" array ");" \n
+)
+
+(define-skeleton php-sort
+  "Insert a sort statement. Sort an array."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq sort_flags (skeleton-read "sort_flags: "))
+  > "sort(" array ", " sort_flags ");" \n
+)
+
+(define-skeleton php-uasort
+  "Insert a uasort statement. Sort an array with a user-defined comparison function and maintain index association."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq value_compare_func (skeleton-read "value_compare_func: "))
+  > "uasort(" array ", " value_compare_func ");" \n
+)
+
+(define-skeleton php-uksort
+  "Insert a uksort statement. Sort an array by keys using a user-defined comparison function."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq key_compare_func (skeleton-read "key_compare_func: "))
+  > "uksort(" array ", " key_compare_func ");" \n
+)
+
+(define-skeleton php-usort
+  "Insert a usort statement. Sort an array by values using a user-defined comparison function."
+  ""
+  '(setq array (skeleton-read "array: "))
+  '(setq value_compare_func (skeleton-read "value_compare_func: "))
+  > "usort(" array ", " value_compare_func ");" \n
+)
